@@ -3,7 +3,7 @@ import subprocess
 from constants import *
 
 
-class Firewall():
+class Firewall:
     def __init__(self):
         pass
 

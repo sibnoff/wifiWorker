@@ -113,18 +113,12 @@ class AccessPoint:
     @staticmethod
     def set_ip_fwd():
         subprocess.Popen(
-            ['sysctl', '-w', 'net.ipv4.ip_forward=1'],
-            stdout=DN,
-            stderr=ER
-        )
+            ['sysctl', '-w', 'net.ipv4.ip_forward=1'], stdout=DN, stderr=ER)
 
     @staticmethod
     def set_route_localnet():
         subprocess.Popen(
-            ['sysctl', '-w', 'net.ipv4.conf.all.route_localnet=1'],
-            stdout=DN,
-            stderr=ER
-        )
+            ['sysctl', '-w', 'net.ipv4.conf.all.route_localnet=1'], stdout=DN, stderr=ER)
 
     @staticmethod
     def on_exit():
