@@ -43,7 +43,7 @@ class AccessPoint:
             if self.internet_interface:
                 dhcpconf.write("server=%s" % (PUBLIC_DNS,))
             else:
-                dhcpconf.write("address=/#/%s" % (NETWORK_GW_IP,))
+                dhcpconf.write("address=/#/%s\n" % (NETWORK_GW_IP,))
 
         dhcp = subprocess.Popen(['dnsmasq', '-C', '/tmp/dhcpd.conf'], stdout=DN, stderr=ER)
         time.sleep(1)

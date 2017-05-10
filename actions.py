@@ -4,6 +4,7 @@ from accesspoint import AccessPoint
 from firewall import Firewall
 from constants import *
 from clientStation import ClientStation
+from menu import Menu
 
 
 class Actions:
@@ -62,15 +63,48 @@ class Actions:
             print('{}. {}'.format(i, clients[client].get_full_info()))
             i += 1
 
-    @staticmethod
-    def show_redirect_rules(rules):
-        i = 1
-        for rule in rules:
-            print('{}. {}'.format(i, rule))
-        print('')
+    def show_redirect_rules(self, rules):
+        if len(rules) != 0:
+            i = 1
+            print('Текущие сайты для редиректа:')
+            for name in rules.keys():
+                print('{}. {}'.format(i, name))
+                i += 1
+        else:
+            print('Список для редиректа пуст.')
+        list_files = os.listdir('sites_address')
+        avaib_sites = dict()
+        if len(list_files) == 0:
+            print('Отсутствуют конфигурационные файлы для сайтов')
+        else:
+            print('Доступные сайты для редиректа:')
+            i = 1
+            for file in list_files:
+                list_ip = open('sites_address/{}'.format(file), 'r').readlines()
+                avaib_sites[file] = list_ip
+                print('{}. {} -->> {}'.format(i, file, avaib_sites[file]))
+                i += 1
+        menu = Menu()
+        menu.set_items([3, 4, 5, 6])
+        menu.show()
+        item = menu.get_choose(input())
+        if item == 6:
+            return
+        self.run(item, None, None, rules)
 
     def add_redirect_rules(self, rules):
-        raise NotImplementedError
+        list_files = os.listdir('sites_address')
+        avaib_sites = dict()
+        if len(list_files) == 0:
+            print('Отсутствуют конфигурационные файлы для сайтов')
+        else:
+            print('Доступные сайты для редиректа:')
+            i = 1
+            for file in list_files:
+                list_ip = open('sites_address/{}'.format(file), 'r').readlines()
+                avaib_sites[file] = list_ip
+                print('{}. {} -->> {}'.format(i, file, avaib_sites[file]))
+                i += 1
 
     def del_redirect_rules(self, rules):
         raise NotImplementedError
@@ -78,3 +112,4 @@ class Actions:
     @staticmethod
     def clear_redirect_rules(rules):
         rules.clear()
+        raise NotImplementedError

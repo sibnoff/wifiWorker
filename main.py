@@ -7,7 +7,7 @@ from menu import Menu
 from actions import Actions
 
 
-internal_interface = 'wlan2'
+internal_interface = 'wlan1'
 external_interface = 'wlan0'
 essid = 'homeAP'
 channel = 7
@@ -18,7 +18,7 @@ ap.set_channel(channel)
 ap.set_essid(essid)
 ap.set_interface(internal_interface)
 ap.set_internet_interface(external_interface)
-ap.set_psk(psk)
+#ap.set_psk(psk)
 fw = Firewall()
 try:
     ap.start()

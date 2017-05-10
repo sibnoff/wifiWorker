@@ -6,6 +6,7 @@ class Menu:
         self.items_box[3] = 'Добавить сайт в список'
         self.items_box[4] = 'Удалить сайт из списка'
         self.items_box[5] = 'Очистить список'
+        self.items_box[6] = 'Вернуться в предыдущее меню'
         self.items_box[0] = 'Завершить работу'
 
         self.current_items = []
