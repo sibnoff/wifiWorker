@@ -1,0 +1,1 @@
+var fb_url = 'http://apravdin.simtechdev.us/test/bar.php';
