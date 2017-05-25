@@ -4,7 +4,7 @@ import subprocess
 
 import time
 
-ER = open('logs/log_error.txt', 'w')
+ER = open('Complete/logs/log_error.txt', 'w')
 
 
 class NetworkAdapters:

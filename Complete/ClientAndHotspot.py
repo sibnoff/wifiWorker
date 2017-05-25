@@ -19,7 +19,7 @@ class Client:
         self._cur_ip = cur_ip
         self._nick = nick
         self._essid = essid
-        self._log = Logging('logs/main.log')
+        self._log = Logging('Complete/logs/main.log')
 
     def __str__(self):
         """Возвращает строку: MAC:current_ip:nick"""
@@ -50,7 +50,7 @@ class Client:
         query_nick = 'select nick from {}.clients where mac = {} limit 1'.format(dbName, mac)
         tmp = mw.execute_scalar(query_nick)
         if tmp is None:
-            lg = Logging('logs/main.log')
+            lg = Logging('Complete/logs/main.log')
             lg.write_log("SELECT_ERROR", "Не удалось выполнить запрос ника клиента.")
             return None
         return tmp[0]
@@ -81,7 +81,7 @@ class Hotspot:
         self._essid = essid
         self._loc_lat = latitude
         self._loc_lon = longitude
-        self._log = Logging('logs/main.log')
+        self._log = Logging('Complete/logs/main.log')
 
     # метод преобразует координаты в json
     def loc_to_json(self):
@@ -135,13 +135,13 @@ class Hotspot:
         return tmp
 
 
-# cl = ClientStation("123", '192.168.1.1', 'вапрв', 'чапртвп')
+# cl = Client("123", '192.168.1.1', 'вапрв', 'чапртвп')
 # cl.insert_info()
-# print(ClientStation.get_nick('123'))
+# print(Client.get_nick('123'))
 # cl.set_nick('AAA')
 # cl.update_nick_in_db()
 # print(cl.get_info())
-
+#
 # td = Hotspot('kdjhf', '111', '56', '65')
 # print(td.loc_to_json())
 # td.insert_info()

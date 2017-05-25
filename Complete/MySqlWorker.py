@@ -1,13 +1,13 @@
 import json
 import os
 import pymysql
-from Logging import Logging
+from Complete.Logging import Logging
 
 
 class MySqlWorker:
     def __init__(self):
-        self.log = Logging('logs/mySqlWorker.log')
-        file_name_cfg = 'mySql.cfg'
+        self.log = Logging('Complete/logs/mySqlWorker.log')
+        file_name_cfg = 'Complete/mySqlConfig.cfg'
         if not os.path.isfile(file_name_cfg):
             raise FileNotFoundError('Не найден конфигурационный '
                                     'файл: {}'.format(file_name_cfg))
@@ -113,5 +113,5 @@ class MySqlWorker:
             self.log.write_log("EXE_ERROR", ex)
             return None
 
-mysql = MySqlWorker()
-mysql.show_settings()
+# mysql = MySqlWorker()
+# mysql.show_settings()

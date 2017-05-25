@@ -1,6 +1,6 @@
 import subprocess
 
-ER = open('logs/log_error.txt', 'w')
+ER = open('Complete/logs/log_error.txt', 'w')
 
 
 class Chains:
