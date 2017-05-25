@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-import time
+from Complete.Firewall import Firewall
 from accesspoint import AccessPoint
-from firewall import Firewall
+from actions import Actions
 from constants import *
 from menu import Menu
-from actions import Actions
 
-
-internal_interface = 'wlan1'
+internal_interface = 'wlan2'
 external_interface = 'wlan0'
 essid = 'homeAP'
 channel = 6

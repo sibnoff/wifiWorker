@@ -1,9 +1,9 @@
 from subprocess import Popen, PIPE
 
+from Complete.Firewall import Firewall
 from accesspoint import AccessPoint
-from firewall import Firewall
+from accesspoint import ClientStation
 from constants import *
-from clientStation import ClientStation
 from menu import Menu
 
 

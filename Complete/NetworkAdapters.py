@@ -32,6 +32,8 @@ class NetworkAdapters:
     @staticmethod
     def down_iface(iface):
         """Метод тушит сетевой интерфейс"""
+        if iface not in NetworkAdapters.get_all_interfaces():
+            raise ValueError('{} не является интерфейсом'.format(iface))
         p = subprocess.Popen(["sudo", "ifconfig", iface, "down"],
                              stdin=subprocess.PIPE,
                              stdout=subprocess.PIPE,
@@ -41,6 +43,8 @@ class NetworkAdapters:
     @staticmethod
     def up_iface(iface):
         """Метод поднимает сетевой интерфейс"""
+        if iface not in NetworkAdapters.get_all_interfaces():
+            raise ValueError('{} не является интерфейсом'.format(iface))
         p = subprocess.Popen(["sudo", "ifconfig", iface, "up"],
                              stdin=subprocess.PIPE,
                              stdout=subprocess.PIPE,
@@ -63,13 +67,25 @@ class NetworkAdapters:
         return active_iface
 
     @staticmethod
+    def is_active(iface):
+        """Метод проверяет, является ли активным интерефейс"""
+        if iface not in NetworkAdapters.get_all_interfaces():
+            raise ValueError('{} не является интерфейсом'.format(iface))
+        if iface in NetworkAdapters.get_active_interfaces():
+            return True
+        else:
+            return False
+
+    @staticmethod
     def set_mode(iface, mode):
         """Метод задает режим работы для беспроводного
         интерфейса(тушит, задает режим, поднимает)"""
         if iface not in NetworkAdapters.get_air_interfaces():
-            raise ValueError('{} не является беспроводным адаптером'.format(iface))
+            raise ValueError('{} не является беспроводным '
+                             'адаптером'.format(iface))
         if mode not in ['managed', 'monitor', 'master']:
-            raise ValueError('Не коректно задан режим работы адаптера: {}'.format(mode))
+            raise ValueError('Не коректно задан режим работы '
+                             'адаптера: {}'.format(mode))
         subprocess.call("ifconfig {} down && "
                         "iwconfig {} mode {} && "
                         "ifconfig {} "
