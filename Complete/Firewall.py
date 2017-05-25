@@ -4,11 +4,10 @@ ER = open('log_error.txt', 'w')
 
 
 class Chains:
-    preroute_chain = 'PREROUTING'
-    postroute_chain = 'POSTROUTING'
-    fwd_chain = 'FORWARD'
-    input_chain = 'INPUT'
-    output_chain = 'OUTPUT'
+    tables = ['nat', 'mangle', 'filter']
+    nat_chains = ['PREROUTING', 'POSTROUTING']
+    filter_chains = ['INPUT', 'FORWARD', 'OUTPUT']
+    mangle_chains = ['PREROUTING', 'POSTROUTING']
 
 
 class Firewall:
@@ -49,7 +48,7 @@ class Firewall:
                              stderr=ER)
         out, err = p.communicate()
         cur_count_rules = len(out.decode(encoding='utf-8').split('\n')) - 2
-        subprocess.call(rule, shell=True)
+        subprocess.call(rule, shell=True, stderr=ER)
         return cur_count_rules
 
     @staticmethod
@@ -57,23 +56,64 @@ class Firewall:
         """метод удаляет правило из таблицы nat цепочи PREROUTING
          по индексу, который возвращает метод redirect_port_to_port"""
         cmd = 'iptables -t nat -D PREROUTING {}'.format(rule_index)
-        subprocess.call(cmd, shell=True)
+        subprocess.call(cmd, shell=True, stderr=ER)
 
     @staticmethod
     def del_rule_postrouting(rule_index):
         """метод удаляет правило из таблицы nat цепочи POSTROUTING
          по индексу"""
         cmd = 'iptables -t nat -D POSTROUTING {}'.format(rule_index)
-        subprocess.call(cmd, shell=True)
+        subprocess.call(cmd, shell=True, stderr=ER)
+
+    @staticmethod
+    def show_nat_rules(chain):
+        """метод возвращает список правил таблицы nat с индексами"""
+        if chain not in Chains.nat_chains:
+            raise ValueError('Значение chain '
+                             'должно быть одно из: {}'.format(Chains.nat_chains))
+        p = subprocess.Popen(["iptables", "-t", "nat", "-L", chain, "--line-numbers"],
+                             stdin=subprocess.PIPE,
+                             stdout=subprocess.PIPE,
+                             stderr=ER)
+        out, err = p.communicate()
+        return out.decode(encoding='utf-8')
+
+    @staticmethod
+    def show_filter_rules(chain):
+        """метод возвращает список правил таблицы filter с индексами"""
+        if chain not in Chains.filter_chains:
+            raise ValueError('Значение chain '
+                             'должно быть одно из: {}'.format(Chains.filter_chains))
+        p = subprocess.Popen(["iptables", "-t", "filter", "-L", chain, "--line-numbers"],
+                             stdin=subprocess.PIPE,
+                             stdout=subprocess.PIPE,
+                             stderr=ER)
+        out, err = p.communicate()
+        return out.decode(encoding='utf-8')
+
+    @staticmethod
+    def show_mangle_rules(chain):
+        """метод возвращает список правил таблицы mangle с индексами"""
+        if chain not in Chains.mangle_chains:
+            raise ValueError('Значение chain '
+                             'должно быть одно из: {}'.format(Chains.mangle_chains))
+        p = subprocess.Popen(["iptables", "-t", "mangle", "-L", chain, "--line-numbers"],
+                             stdin=subprocess.PIPE,
+                             stdout=subprocess.PIPE,
+                             stderr=ER)
+        out, err = p.communicate()
+        return out.decode(encoding='utf-8')
 
     def on_exit(self):
         self.clear_rules()
 
 #добавляем последовательно 3 правила и удаляем их по
-# индексам, но обязательно в тойже последовательности
+# индексам, но обязательно в той же последовательности
 # one = Firewall.redirect_port_to_port(666, 777)
 # two = Firewall.redirect_port_to_port(665, 776)
 # three = Firewall.redirect_port_to_port(664, 775)
+# print(Firewall.show_nat_rules('PREROUTING'))
 # Firewall.del_rule_prerouting(three)
 # Firewall.del_rule_prerouting(two)
-#Firewall.del_rule_prerouting(one)
+# Firewall.del_rule_prerouting(one)
+# print(Firewall.show_nat_rules('PREROUTING'))
