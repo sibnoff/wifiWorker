@@ -1,9 +1,0 @@
-Configuration file: /tmp/hostapd.conf
-Using interface wlan2 with hwaddr 00:c0:ca:58:7e:71 and ssid "homeAP"
-wlan2: interface state UNINITIALIZED->ENABLED
-wlan2: AP-ENABLED 
-net.ipv4.ip_forward = 1
-net.ipv4.conf.all.route_localnet = 1
-wlan2: interface state ENABLED->DISABLED
-wlan2: AP-DISABLED 
-nl80211: deinit ifname=wlan2 disabled_11b_rates=0

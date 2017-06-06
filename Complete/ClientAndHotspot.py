@@ -1,6 +1,5 @@
 import datetime
 import json
-
 from Complete.Logging import Logging
 from Complete.MySqlWorker import MySqlWorker
 
@@ -17,7 +16,10 @@ class Client:
     def __init__(self, mac, cur_ip, nick, essid):
         self._mac = mac
         self._cur_ip = cur_ip
-        self._nick = nick
+        if nick is None:
+            self._nick = mac
+        else:
+            self._nick = nick
         self._essid = essid
         self._log = Logging('Complete/logs/main.log')
 
@@ -147,3 +149,30 @@ class Hotspot:
 # td.insert_info()
 # print(td.get_info())
 
+# essids = open('Complete/essids_izmailovo', 'r').readlines()
+# bssids = open('Complete/bssids_izmailovo', 'r').readlines()
+#
+# for i in range(len(essids)):
+#     td = Hotspot(bssids[i], essids[i], '55.791878', '37.74847')
+#     td.insert_info()
+#
+# essids = open('Complete/essids_akados', 'r').readlines()
+# bssids = open('Complete/bssids_akados', 'r').readlines()
+#
+# for i in range(len(essids)):
+#     td = Hotspot(bssids[i], essids[i], '55.684267', '37.471305')
+#     td.insert_info()
+#
+# essids = open('Complete/essids_selhoz13', 'r').readlines()
+# bssids = open('Complete/bssids_selhoz13', 'r').readlines()
+#
+# for i in range(len(essids)):
+#     td = Hotspot(bssids[i], essids[i], '55.836449', '37.639242')
+#     td.insert_info()
+
+essids = open('Complete/essids_yasnogor', 'r').readlines()
+bssids = open('Complete/bssids_yasnogor', 'r').readlines()
+
+for i in range(len(essids)):
+    td = Hotspot(bssids[i], essids[i], '55.601738', '37.533458')
+    td.insert_info()
