@@ -54,7 +54,8 @@ ROOT_URLCONF = 'adminka.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/intercepter/PycharmProjects/WIFI/wifiWorker/adminka/adminka/templates'],
+        'DIRS': ['/home/intercepter/PycharmProjects/WIFI/wifiWorker/adminka/adminka/templates',
+                 '/home/intercepter/PycharmProjects/wifiWorker/adminka/adminka/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
