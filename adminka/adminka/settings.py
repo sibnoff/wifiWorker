@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+# URL prefix for static files.
+# Example: "http://media.lawrence.com/static/"
 
 ROOT_URLCONF = 'adminka.urls'
 
@@ -114,8 +116,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
+STATICFILES_DIRS = (
+    '/home/intercepter/PycharmProjects/WIFI/wifiWorker/adminka/adminka/static',
+)
 
 STATIC_URL = '/static/'

@@ -15,10 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from adminka.views import hello, current_datetime
+from adminka.views import settings, monitoring, hotspot, \
+    sniff, jammer, proxy_server, rainbow_tables, map_working, \
+    download, help_page
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^hello/$', hello),
-    url(r'^time/$', current_datetime)
+    url(r'^$', settings),
+    url(r'^settings/$', settings),
+    url(r'^monitoring/$', monitoring),
+    url(r'^hotspot/$', hotspot),
+    url(r'^sniff/$', sniff),
+    url(r'^jammer/$', jammer),
+    url(r'^proxyserver/$', proxy_server),
+    url(r'^rainbowtables/$', rainbow_tables),
+    url(r'^mapworking/$', map_working),
+    url(r'^download/$', download),
+    url(r'^help/$', help_page)
 ]

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Безопасность Wi-Fi</title>
+	<link rel="stylesheet" href="/static/styles.css" type="text/css">
+</head>
+<body>
+	<div id="wrapper">
+		<header>
+			<h1>Тестирование безопасности Wi-Fi сетей</h1>
+		</header>
+		<hr id="border">
+		<nav>
+			<ul class="top-menu">
+				<li><a href="/settings/">Настройки</a></li>
+				<li><a href="/monitoring/">Мониторинг</a></li>
+				<li><a href="/hotspot/">Точка доступа</a></li>
+				<li><a href="/sniff/">Захват пакетов</a></li>
+				<li><a href="/jammer/">Инъекции в эфир</a></li>
+				<li><a href="/proxyserver/">Прокси сервер</a></li>
+				<li><a href="/rainbowtables/">Подбор пароля</a></li>
+				<li><a href="/mapworking/">Работа с картой</a></li>
+				<li><a href="/download/">Выгрузка файлов</a></li>
+				<li><a href="/help/">Справка</a></li>		
+			</ul>
+		</nav>
+		<hr id="border">
+		<div id="heading">{{ page_name }}</div>
+		<aside>{{logs}}</aside>
+		<section class="content">{{work_place}}</section>
+	</div>
+	<hr id="border">
+	<footer>{{diag_info}}</footer>
+</body>
+</html>
