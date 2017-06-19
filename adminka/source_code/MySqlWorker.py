@@ -1,13 +1,16 @@
 import json
 import os
 import pymysql
-from Complete.Logging import Logging
+import sys
+
+from constants import *
+from Logging import Logging
 
 
 class MySqlWorker:
     def __init__(self):
-        self.log = Logging('Complete/logs/mySqlWorker.log')
-        file_name_cfg = 'Complete/mySqlConfig.cfg'
+        self.log = Logging(LOGS_DIR_NAME + 'mySqlWorker.log')
+        file_name_cfg = 'mySqlConfig.cfg'
         if not os.path.isfile(file_name_cfg):
             raise FileNotFoundError('Не найден конфигурационный '
                                     'файл: {}'.format(file_name_cfg))
@@ -30,9 +33,9 @@ class MySqlWorker:
         self._settings = json_data
         return True
 
-    # метод возвращает текущие натсройки БД в формате json
-    def show_settings(self):
-        print(self._settings)
+    # метод возвращает настройки в виде словаря
+    def get_settings(self):
+        return self._settings
 
     # метод проверяет доступность БД
     def test_connection(self):
@@ -114,4 +117,7 @@ class MySqlWorker:
             return None
 
 # mysql = MySqlWorker()
-# mysql.show_settings()
+# print(mysql.get_settings())
+for row in sys.path:
+    print(row)
+

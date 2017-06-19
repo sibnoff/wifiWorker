@@ -2,8 +2,9 @@
 import subprocess
 import time
 
-from Complete.Firewall import Firewall
 from Complete.constants import *
+
+from adminka.source.Firewall import Firewall
 
 
 class ClientStation:

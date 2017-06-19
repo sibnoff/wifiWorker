@@ -1,7 +1,9 @@
 import datetime
 import json
-from Complete.Logging import Logging
+
 from Complete.MySqlWorker import MySqlWorker
+
+from adminka.source.Logging import Logging
 
 dbName = 'wifiWorker'
 

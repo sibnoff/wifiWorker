@@ -1,5 +1,6 @@
 import json
-from Complete.Logging import Logging
+
+from adminka.source.Logging import Logging
 
 
 class Location:
