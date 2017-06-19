@@ -1,6 +1,5 @@
 import subprocess
-
-ER = open('Complete/logs/log_error.txt', 'w')
+from constants import *
 
 
 class Chains:
@@ -107,13 +106,13 @@ class Firewall:
     def on_exit(self):
         self.clear_rules()
 
-#добавляем последовательно 3 правила и удаляем их по
-# индексам, но обязательно в той же последовательности
-# one = Firewall.redirect_port_to_port(666, 777)
-# two = Firewall.redirect_port_to_port(665, 776)
-# three = Firewall.redirect_port_to_port(664, 775)
-# print(Firewall.show_nat_rules('PREROUTING'))
-# Firewall.del_rule_prerouting(three)
-# Firewall.del_rule_prerouting(two)
-# Firewall.del_rule_prerouting(one)
-# print(Firewall.show_nat_rules('PREROUTING'))
+        # добавляем последовательно 3 правила и удаляем их по
+        # индексам, но обязательно в той же последовательности
+        # one = Firewall.redirect_port_to_port(666, 777)
+        # two = Firewall.redirect_port_to_port(665, 776)
+        # three = Firewall.redirect_port_to_port(664, 775)
+        # print(Firewall.show_nat_rules('PREROUTING'))
+        # Firewall.del_rule_prerouting(three)
+        # Firewall.del_rule_prerouting(two)
+        # Firewall.del_rule_prerouting(one)
+        # print(Firewall.show_nat_rules('PREROUTING'))

@@ -1,6 +1,5 @@
 import json
-
-from adminka.source.Logging import Logging
+from Logging import Logging
 
 
 class Location:
@@ -22,7 +21,7 @@ class Location:
         self._log.write_log("GET_ESSID_LOCATION", "SUCCESSFULL, ESSID {}".format(essid))
         return json.dumps(data)
 
-loc = Location()
-print(loc.get_current_loc(5))
-print(loc.get_loc_bssid('AAA'))
-print(loc.get_loc_essid('BBB'))
+# loc = Location()
+# print(loc.get_current_loc(5))
+# print(loc.get_loc_bssid('AAA'))
+# print(loc.get_loc_essid('BBB'))

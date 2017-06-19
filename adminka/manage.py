@@ -3,6 +3,7 @@ import os
 import sys
 
 if __name__ == "__main__":
+    sys.path.append('/home/intercepter/PycharmProjects/wifiWorker/adminka/source_code')
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "adminka.settings")
     try:
         from django.core.management import execute_from_command_line

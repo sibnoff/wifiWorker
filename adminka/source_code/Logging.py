@@ -10,11 +10,10 @@ class Logging:
         try:
             if os.path.isfile(self._log_file):
                 fwrite = open(self._log_file, 'a')
-                fwrite.writelines("{} --->>> {} --->>> {}\n".format(str(datetime.datetime.now()), tag_msg, text_msg))
-                fwrite.writelines('')
             else:
                 fwrite = open(self._log_file, 'w')
-                fwrite.writelines("{} --->>> {} --->>> {}\n".format(str(datetime.datetime.now()), tag_msg, text_msg))
-                fwrite.writelines('')
+            fwrite.writelines("{} --->>> {} --->>> {}\n".format(str(datetime.datetime.now()), tag_msg, text_msg))
+            fwrite.writelines('')
+            fwrite.close()
         except Exception as e:
             print(str(e))

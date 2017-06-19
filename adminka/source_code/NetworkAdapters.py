@@ -1,10 +1,8 @@
 import netifaces
 import re
 import subprocess
-
 import time
-
-ER = open('Complete/logs/log_error.txt', 'w')
+from constants import *
 
 
 class NetworkAdapters:
@@ -134,35 +132,35 @@ class NetworkAdapters:
         return matches.groupdict()['mode']
 
 
-interface = 'wlan2'
-
+# interface = 'wlan2'
+#
 # выводим все сетевые интерфейсы
-print(NetworkAdapters.get_all_interfaces())
-
-# выводим все беспроводные интерфейсы
-print(NetworkAdapters.get_air_interfaces())
-
-# выводим все ативные сетевые интерфейсы
-print(NetworkAdapters.get_active_interfaces())
-
-# тушим интерфейс
-NetworkAdapters.down_iface(interface)
-
-# выводим все ативные сетевые интерфейсы
-print(NetworkAdapters.get_active_interfaces())
-
-# поднимаем интерфейс
-NetworkAdapters.up_iface(interface)
-print(NetworkAdapters.get_mode(interface))
-
-# меняем режим работы интерфеса
-NetworkAdapters.set_mode(interface, 'monitor')
-
-# вывод режима работы интерфейса
-print(NetworkAdapters.get_mode(interface))
-
-# вывод режима работы интерфейса
-NetworkAdapters.set_mode(interface, 'managed')
-
-# вывод статистики по интерфейсу
-print(NetworkAdapters.get_info(interface))
+# print(NetworkAdapters.get_all_interfaces())
+#
+# # выводим все беспроводные интерфейсы
+# print(NetworkAdapters.get_air_interfaces())
+#
+# # выводим все ативные сетевые интерфейсы
+# print(NetworkAdapters.get_active_interfaces())
+#
+# # тушим интерфейс
+# NetworkAdapters.down_iface(interface)
+#
+# # выводим все ативные сетевые интерфейсы
+# print(NetworkAdapters.get_active_interfaces())
+#
+# # поднимаем интерфейс
+# NetworkAdapters.up_iface(interface)
+# print(NetworkAdapters.get_mode(interface))
+#
+# # меняем режим работы интерфеса
+# NetworkAdapters.set_mode(interface, 'monitor')
+#
+# # вывод режима работы интерфейса
+# print(NetworkAdapters.get_mode(interface))
+#
+# # вывод режима работы интерфейса
+# NetworkAdapters.set_mode(interface, 'managed')
+#
+# # вывод статистики по интерфейсу
+# print(NetworkAdapters.get_info(interface))

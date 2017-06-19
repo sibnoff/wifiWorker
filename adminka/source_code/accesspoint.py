@@ -1,10 +1,9 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import subprocess
 import time
-
-from Complete.constants import *
-
-from adminka.source.Firewall import Firewall
+from constants import *
+from Firewall import Firewall
 
 
 class ClientStation:

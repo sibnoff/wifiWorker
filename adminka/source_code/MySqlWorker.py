@@ -8,21 +8,20 @@ from Logging import Logging
 
 
 class MySqlWorker:
-    def __init__(self):
+    def __init__(self, file_name):
         self.log = Logging(LOGS_DIR_NAME + 'mySqlWorker.log')
-        file_name_cfg = 'mySqlConfig.cfg'
-        if not os.path.isfile(file_name_cfg):
+        if not os.path.isfile(file_name):
             raise FileNotFoundError('Не найден конфигурационный '
-                                    'файл: {}'.format(file_name_cfg))
-        self._file_cfg = file_name_cfg
+                                    'файл: {}'.format(file_name))
+        self._file_cfg = file_name
         self._settings = dict()
-        if not self.read_config(file_name_cfg):
+        if not self.read_config():
             raise ValueError('Некорректное содержимое конфигурационного файла.')
         self.test_connection()
 
     # метод для чтения конфига БД
-    def read_config(self, file_name):
-        f = open(file_name, 'r')
+    def read_config(self):
+        f = open(self._file_cfg, 'r')
         text = f.readline()
         f.close()
         try:
@@ -31,6 +30,16 @@ class MySqlWorker:
             self.log.write_log("JSON", ex)
             return False
         self._settings = json_data
+        return True
+
+    def write_config(self):
+        f = open(self._file_cfg, 'w')
+        try:
+            f.writelines(json.dumps(self._settings))
+        except Exception as ex:
+            self.log.write_log("JSON", ex)
+            return False
+        f.close()
         return True
 
     # метод возвращает настройки в виде словаря
@@ -118,6 +127,4 @@ class MySqlWorker:
 
 # mysql = MySqlWorker()
 # print(mysql.get_settings())
-for row in sys.path:
-    print(row)
 

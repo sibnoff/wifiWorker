@@ -1,11 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 import datetime
 import json
 
-from Complete.MySqlWorker import MySqlWorker
-
-from adminka.source.Logging import Logging
-
-dbName = 'wifiWorker'
+from Logging import Logging
+from MySqlWorker import MySqlWorker
+from constants import *
 
 
 class Client:
@@ -23,7 +23,7 @@ class Client:
         else:
             self._nick = nick
         self._essid = essid
-        self._log = Logging('Complete/logs/main.log')
+        self._log = Logging(LOGS_DIR_NAME + 'main.log')
 
     def __str__(self):
         """Возвращает строку: MAC:current_ip:nick"""
@@ -40,7 +40,7 @@ class Client:
                        "nick, lastEssid, dateUpdate) values " \
                        "('{}', '{}', '{}', '{}', '{}')" \
                        "on duplicate key update lastEssid = '{}', " \
-                       "dateUpdate = '{}'".format(dbName, datetime.datetime.now(),
+                       "dateUpdate = '{}'".format(DB_NAME, datetime.datetime.now(),
                                                   self._mac, self._nick, self._essid,
                                                   datetime.datetime.now(), self._essid,
                                                   datetime.datetime.now())
@@ -51,7 +51,7 @@ class Client:
     @staticmethod
     def get_nick(mac):
         mw = MySqlWorker()
-        query_nick = 'select nick from {}.clients where mac = {} limit 1'.format(dbName, mac)
+        query_nick = 'select nick from {}.clients where mac = {} limit 1'.format(DB_NAME, mac)
         tmp = mw.execute_scalar(query_nick)
         if tmp is None:
             lg = Logging('Complete/logs/main.log')
@@ -63,7 +63,7 @@ class Client:
     def update_nick_in_db(self):
         mw = MySqlWorker()
         query_update = "update {}.clients set nick = '{}' " \
-                       "where mac = '{}'".format(dbName, self._nick,
+                       "where mac = '{}'".format(DB_NAME, self._nick,
                                                  self._mac)
         if mw.execute_none(query_update) is None:
             self._log.write_log("UPDATE_ERROR", "Не удалось выполнить обновление ника клиента.")
@@ -71,7 +71,7 @@ class Client:
     # получаем всю информацию о клиенте из таблицы clients
     def get_info(self):
         mw = MySqlWorker()
-        query_info = 'select * from {}.clients where mac = {} limit 1'.format(dbName, self._mac)
+        query_info = 'select * from {}.clients where mac = {} limit 1'.format(DB_NAME, self._mac)
         tmp = mw.execute_scalar(query_info)
         if tmp is None:
             self._log.write_log("SELECT_ERROR", "Не удалось выполнить запрос информации о клиенте.")
@@ -101,7 +101,7 @@ class Hotspot:
     def insert_info(self):
         mw = MySqlWorker()
         query_clone = "select count(*) from {}.hotspots where essid = '{}' " \
-                      "and bssid = '{}'".format(dbName, self._essid,
+                      "and bssid = '{}'".format(DB_NAME, self._essid,
                                                 self._bssid)
         tmp = mw.execute_scalar(query_clone)
         if tmp is None:
@@ -110,7 +110,7 @@ class Hotspot:
         if int(tmp[0]) != 0:
             query_update = "update {}.hotspots set " \
                            "location = '{}', dateUpdate = " \
-                           "'{}'".format(dbName, self.loc_to_json(),
+                           "'{}'".format(DB_NAME, self.loc_to_json(),
                                          datetime.datetime.now())
             if mw.execute_none(query_update) is None:
                 self._log.write_log("UPDATE_ERROR", "Не удалось выполнить "
@@ -118,7 +118,7 @@ class Hotspot:
             return
         query_insert = "insert into {}.hotspots (dateInsert, essid, " \
                        "bssid, location, dateUpdate) values ('{}', '{}', " \
-                       "'{}', '{}', '{}')".format(dbName, datetime.datetime.now(),
+                       "'{}', '{}', '{}')".format(DB_NAME, datetime.datetime.now(),
                                                   self._essid, self._bssid,
                                                   self.loc_to_json(),
                                                   datetime.datetime.now())
@@ -130,7 +130,7 @@ class Hotspot:
         mw = MySqlWorker()
         query_info = "select * from {}.hotspots where " \
                      "essid = '{}' and bssid = '{}' " \
-                     "limit 1".format(dbName, self._essid,
+                     "limit 1".format(DB_NAME, self._essid,
                                       self._bssid)
         tmp = mw.execute_scalar(query_info)
         if tmp is None:

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 		{% block content %}
-            <aside>{{logs}}</aside>
-            <section class="content">{{work_place}}</section>
+            <aside>{% block logs %}{% endblock %}</aside>
+            <section class="content">{% block managment %}{% endblock %}</section>
         {% endblock %}
 
