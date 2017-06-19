@@ -118,6 +118,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = (
     '/home/intercepter/PycharmProjects/WIFI/wifiWorker/adminka/adminka/static',
+    '/home/intercepter/PycharmProjects/wifiWorker/adminka/adminka/static'
 )
 
 STATIC_URL = '/static/'

@@ -5,6 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>Безопасность Wi-Fi</title>
 	<link rel="stylesheet" href="/static/styles.css" type="text/css">
+	<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="/static/yandex_map.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="wrapper">
@@ -28,8 +30,7 @@
 		</nav>
 		<hr id="border">
 		<div id="heading">{{ page_name }}</div>
-		<aside>{{logs}}</aside>
-		<section class="content">{{work_place}}</section>
+		{% block content %}{% endblock %}
 	</div>
 	<hr id="border">
 	<footer>{{diag_info}}</footer>

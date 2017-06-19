@@ -17,7 +17,7 @@ aside {
 }
 section {
 	width: 75%;
-    height: 600px;
+	height: 600px;
     color: #000000;
     background: #808080;
 	margin-left: 280px;
@@ -26,15 +26,19 @@ section {
 	margin: 20px;
 	padding-bottom: 10px;
 }
+
 footer {
-	width: 98%;
 	height: 40px;
-	background: #696969;
 	color: #000000;
-	float: down;
 	border: 2px solid black;
 	margin: 20px;
 	padding-bottom: 10px;
+
+	position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #C0C0C0; /* Цвет фона */
+    width: 97%; /* Ширина слоя */
 }
 h1 {
 	display: inline-block;
@@ -94,4 +98,10 @@ nav li {
 	text-align: center;
 	color: #000000;
 	font: 30px/30px 'Oswald', sans-serif;
+}
+
+#map {
+    margin: 20px;
+    width: 70%;
+    height: 600px;
 }

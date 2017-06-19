@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from Complete.Firewall import Firewall
-from accesspoint import AccessPoint
+from Complete.accesspoint import AccessPoint
 from actions import Actions
-from constants import *
 from menu import Menu
 
 internal_interface = 'wlan2'

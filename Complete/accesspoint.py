@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-import os
 import subprocess
 import time
-from constants import *
+
+from Complete.Firewall import Firewall
+from Complete.constants import *
 
 
 class ClientStation:
@@ -168,3 +169,32 @@ class AccessPoint:
             os.remove('/var/lib/misc/dnsmasq.leases')
         if os.path.isfile('/tmp/dhcpd.conf'):
             os.remove('/tmp/dhcpd.conf')
+
+
+internal_interface = 'wlan2'
+external_interface = 'wlan0'
+essid = 'homeAP'
+psk = '123123123'
+
+ap = AccessPoint()
+ap.set_channel(CHANNEL)
+ap.set_essid(essid)
+ap.set_interface(internal_interface)
+ap.set_internet_interface(external_interface)
+ap.set_psk(psk)
+fw = Firewall()
+try:
+    ap.start()
+    print('[*] Точка доступа {} запущена.[*]'.format(essid))
+    ap.start_dhcp_dns()
+    print('[*] DHCP/DNS сервер запущен.[*]')
+    fw.nat(internal_interface, external_interface)
+    ap.set_ip_fwd()
+    ap.set_route_localnet()
+    print('[*] Параметры маршрутизации заданы.[*]')
+except Exception as ex:
+    print('[*] Не удалось запустить точку доступа.[*]')
+    print(ex)
+    ap.on_exit()
+    fw.on_exit()
+    exit(-5)
