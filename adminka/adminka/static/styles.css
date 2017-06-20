@@ -124,3 +124,18 @@ nav li {
     float: right;
     border: 2px solid black;
 }
+#all_iface{
+    margin: 10px;
+    width: 40%;
+    background: #C0C0C0;
+    border: None;
+    height: 400px;
+}
+
+#air_iface{
+    margin: 10px;
+    width: 50%;
+    background: #C0C0C0;
+    border: None;
+    height: 400px;
+}

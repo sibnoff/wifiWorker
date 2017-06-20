@@ -5,16 +5,34 @@
 		{% block managment %}
             <aside id="settings_iface">
                 <div id="heading_2">Настройки сетевых интерфейсов</div>
-                 <p><b>Доступные сетевые интерфейсы:</b><Br>
-                    {% for iface in iface_list %}
-                        <input type="radio" name="iface" value="{{ iface }}">{{ iface }}<BR>
-                    {% endfor %}
-                 </p>
-                <p><b>Доступные беспроводные интерфейсы:</b><Br>
-                    {% for iface in air_iface_list %}
-                        <input type="radio" name="iface" value="{{ iface }}">{{ iface }}<BR>
-                    {% endfor %}
-                 </p>
+                <aside id="air_iface">
+                    <p><b>Доступные беспроводные интерфейсы:</b><Br>
+                        {% for iface in air_iface_list %}
+                            <input type="radio" name="iface" value="{{ iface }}">{{ iface }}<BR>
+                        {% empty %}
+                            <p>Нет доступных беспроводных интерфейсов.</p>
+                        {% endfor %}
+                     </p>
+                    <BR>
+                    <p><b>Режимы работы беспроводных интерфейсов:</b><Br>
+                        <input type="radio" name="air_mode" value="monitor">monitor<BR>
+                        <input type="radio" name="air_mode" value="master">master<BR>
+                        <input type="radio" name="air_mode" value="managed">managed<BR>
+                    </p>
+                    <input type="button" name="change_mode" value="Применить">
+                </aside>
+                <section id="all_iface">
+                    <p><b>Доступные сетевые интерфейсы:</b><Br>
+                        {% for iface in iface_list %}
+                            <input type="radio" name="iface" value="{{ iface }}">{{ iface }}<BR>
+                        {% endfor %}
+                    </p>
+                    <p><b>Состояние:</b><Br>
+                        <input type="radio" name="state" value="start">up<BR>
+                        <input type="radio" name="state" value="stop">down<BR>
+                    </p>
+                    <input type="button" name="change_state" value="Применить">
+                </section>
             </aside>
             <section id="settings_bd">
                 <div id="heading_2">Настройки БД</div>
