@@ -1,15 +1,15 @@
 from django.shortcuts import render_to_response
 from constants import *
-from MySqlWorker import MySqlWorker
-from NetworkAdapters import NetworkAdapters
+from mySqlWorker import MySqlWorker
+from networkAdapters import NetworkAdapters
 
 
 def settings(request):
     worker = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
     db_settings = worker.get_settings()
-    status = 'БД ДОСТУПНА'
+    status = '1'
     if not worker.test_connection():
-        status = 'БД НЕ ДОСТУПНА'
+        status = 0
     db_settings['page_name'] = 'Настройки и диагностика'
     db_settings['connection_status'] = status
     db_settings['iface_list'] = NetworkAdapters.get_all_interfaces()
@@ -18,18 +18,38 @@ def settings(request):
 
 
 def settings_save(request):
-    return render_to_response('settings.html', {'page_name': 'Настройки и диагностика_SAVE'})
+    worker = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg', set_config=True)
+    worker.set_config(request.POST['db_host'],
+                      request.POST['db_name'],
+                      request.POST['db_user'],
+                      request.POST['db_password'])
+    worker.write_config()
+
+    db_settings = worker.get_settings()
+    status = '1'
+    if not worker.test_connection():
+        status = 0
+    db_settings['page_name'] = 'Настройки и диагностика'
+    db_settings['connection_status'] = status
+    return render_to_response('load_settings.html', db_settings)
 
 
 def settings_load(request):
     worker = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
     db_settings = worker.get_settings()
-    status = 'БД ДОСТУПНА'
+    status = '1'
     if not worker.test_connection():
-        status = 'БД НЕ ДОСТУПНА'
-    db_settings['page_name'] = 'Настройки и диагностика_LOAD'
+        status = 0
     db_settings['connection_status'] = status
-    return render_to_response('settings.html', db_settings)
+    return render_to_response('load_settings.html', db_settings)
+
+
+def iface_change_state(request):
+    raise NotImplementedError
+
+
+def air_iface_change_mode(request):
+    raise NotImplementedError
 
 
 def monitoring(request):

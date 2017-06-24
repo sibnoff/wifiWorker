@@ -22,8 +22,8 @@ from adminka.views import settings, monitoring, hotspot, \
 urlpatterns = [
     url(r'^$', settings),
     url(r'^settings/$', settings),
-    url(r'^settings/save$', settings_save),
-    url(r'^settings/load$', settings_load),
+    url(r'^settings/save/$', settings_save),
+    url(r'^settings/load/$', settings_load),
     url(r'^monitoring/$', monitoring),
     url(r'^hotspot/$', hotspot),
     url(r'^sniff/$', sniff),

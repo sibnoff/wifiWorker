@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 PROJECT_DIR = '/home/intercepter/PycharmProjects/wifiWorker/adminka/'
 
 CONFIGS_DIR_NAME = PROJECT_DIR + 'configs/'

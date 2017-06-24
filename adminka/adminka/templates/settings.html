@@ -1,7 +1,4 @@
 {% extends "manage_and_logs.html" %}
-        {% block scripts %}
-            <script src="/static/js/save_db_settings.js" type="text/javascript"></script>
-        {% endblock %}
 		{% block managment %}
             <aside id="settings_iface">
                 <div id="heading_2">Настройки сетевых интерфейсов</div>
@@ -19,7 +16,7 @@
                         <input type="radio" name="air_mode" value="master">master<BR>
                         <input type="radio" name="air_mode" value="managed">managed<BR>
                     </p>
-                    <input type="button" name="change_mode" value="Применить">
+                    <input type="button" id="change_mode" value="Применить">
                 </aside>
                 <section id="all_iface">
                     <p><b>Доступные сетевые интерфейсы:</b><Br>
@@ -31,34 +28,37 @@
                         <input type="radio" name="state" value="start">up<BR>
                         <input type="radio" name="state" value="stop">down<BR>
                     </p>
-                    <input type="button" name="change_state" value="Применить">
+                    <input type="button" id="change_state" value="Применить">
                 </section>
             </aside>
             <section id="settings_bd">
                 <div id="heading_2">Настройки БД</div>
-                <form id="db" method="post">
+                <form id="set_db">
                     <p><b>IP адрес сервера БД:</b><br>
-                        <input type="text" size="40" name="ip" value="{{ db_host }}">
+                        <input type="text" size="40" id="db_ip" value="{{ db_host }}">
                     </p>
                     <p><b>Имя БД:</b><br>
-                        <input type="text" size="40" name="name" value="{{ db_name }}">
+                        <input type="text" size="40" id="db_name" value="{{ db_name }}">
                     </p>
                     <p><b>Имя пользователя БД:</b><br>
-                        <input type="text" size="40" name="login" value="{{ db_user }}">
+                        <input type="text" size="40" id="db_login" value="{{ db_user }}">
                     </p>
                     <p><b>Пароль пользователя БД:</b><br>
-                        <input type="text" size="40" name="passwd" value="{{ db_password }}">
+                        <input type="text" size="40" id="db_passwd" value="{{ db_password }}">
                     </p>
-                    <p><input type="button" value="Сохранить новые настройки" onclick="">
-                    </p>
+                    <p><input type="button" value="Сохранить новые настройки" id="save_set"></p>
                 </form>
                 <form id="test_db">
-                    <p>
-                        <input type="button" value="Загрузить текущие натсройки" onclick="">
-                        <p>
-                        <input type="button" value="Проверить соединение" onclick="">
-                        <output name="result"><b>{{ connection_status }}</b></output></p>
+                    <p><input type="button" value="Загрузить текущие настройки" id="load_set">
+                        <p><input type="button" value="Проверить соединение" id="test_con">
+                            {% if connection_status %}
+                                <output id="result_test_1"><b><font color="green">БД ДОСТУПНА</font></b></output>
+                            {% else %}
+                                <output id="result_test_0"><b><font color="red">БД НЕ ДОСТУПНА</font></b></output>
+                            {% endif %}
+                        </p>
                     </p>
                 </form>
+                <script type="text/javascript" src="/static/js/db_settings.js"></script>
             </section>
         {% endblock %}

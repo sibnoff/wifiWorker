@@ -1,0 +1,26 @@
+function saveSettings() {
+    $.ajax({url: "save/",
+            type: "POST",
+            cache: false,
+            data: "db_host=" + $('#db_ip').val() +
+                  "&db_name=" + $('#db_name').val() +
+                  "&db_user=" + $('#db_login').val() +
+                  "&db_password=" + $('#db_passwd').val(),
+            success: onAjaxSuccess
+    });
+    function onAjaxSuccess(data)
+    {
+        $("#settings_bd").html(data);
+        alert('Настройки успешно сохранены!');
+    }
+}
+function loadSettings() {
+    $.ajax({url: "load/", cache: false, success: function (html){$("#settings_bd").html(html);}});
+}
+function testConnection() {
+    $.ajax({url: "load/", cache: false, success: function (html){$("#settings_bd").html(html);}});
+}
+
+$('#save_set').on('click', saveSettings)
+$('#load_set').on('click', loadSettings)
+$('#test_con').on('click', testConnection)

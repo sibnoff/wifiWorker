@@ -23,7 +23,7 @@ section {
 	margin-left: 280px;
 	padding-bottom: 50px;
     border: 2px solid black;
-	margin: 20px;
+	margin: 30px;
 }
 
 footer {
@@ -112,7 +112,7 @@ nav li {
     height: 600px;
 }
 #settings_bd{
-    margin: 10px;
+    margin: 40px;
     width: 35%;
     height: 580px;
     border: 2px solid black;

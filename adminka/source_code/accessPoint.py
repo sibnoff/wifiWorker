@@ -3,7 +3,7 @@
 import subprocess
 import time
 from constants import *
-from Firewall import Firewall
+from firewall import Firewall
 
 
 class ClientStation:

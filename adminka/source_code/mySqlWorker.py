@@ -1,14 +1,17 @@
 import json
 import os
 import pymysql
-import sys
-
 from constants import *
 from Logging import Logging
 
 
 class MySqlWorker:
-    def __init__(self, file_name):
+    def __init__(self, file_name, set_config=False):
+        if set_config:
+            self._settings = dict()
+            self.log = Logging(LOGS_DIR_NAME + 'mySqlWorker.log')
+            self._file_cfg = file_name
+            return
         self.log = Logging(LOGS_DIR_NAME + 'mySqlWorker.log')
         if not os.path.isfile(file_name):
             raise FileNotFoundError('Не найден конфигурационный '
@@ -31,6 +34,12 @@ class MySqlWorker:
             return False
         self._settings = json_data
         return True
+
+    def set_config(self, host, name, login, passwd):
+        self._settings['db_host'] = host
+        self._settings['db_name'] = name
+        self._settings['db_user'] = login
+        self._settings['db_password'] = passwd
 
     def write_config(self):
         f = open(self._file_cfg, 'w')

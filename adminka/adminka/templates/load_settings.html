@@ -1,0 +1,28 @@
+<div id="heading_2">Настройки БД</div>
+<form id="set_db">
+    <p><b>IP адрес сервера БД:</b><br>
+        <input type="text" size="40" id="db_ip" value="{{ db_host }}">
+    </p>
+    <p><b>Имя БД:</b><br>
+        <input type="text" size="40" id="db_name" value="{{ db_name }}">
+    </p>
+    <p><b>Имя пользователя БД:</b><br>
+        <input type="text" size="40" id="db_login" value="{{ db_user }}">
+    </p>
+    <p><b>Пароль пользователя БД:</b><br>
+        <input type="text" size="40" id="db_passwd" value="{{ db_password }}">
+    </p>
+    <p><input type="button" value="Сохранить новые настройки" id="save_set"></p>
+</form>
+<form id="test_db">
+    <p><input type="button" value="Загрузить текущие настройки" id="load_set">
+        <p><input type="button" value="Проверить соединение" id="test_con">
+            {% if connection_status %}
+                <output id="result_test_1"><b><font color="green">БД ДОСТУПНА</font></b></output>
+            {% else %}
+                <output id="result_test_0"><b><font color="red">БД НЕ ДОСТУПНА</font></b></output>
+            {% endif %}
+        </p>
+    </p>
+</form>
+<script type="text/javascript" src="/static/js/db_settings.js"></script>

@@ -2,11 +2,105 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6830ac21-2cf5-4b16-a4f6-46f4852e43d0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/static/js/db_settings.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/static/js/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/templates/load_settings.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/adminka/adminka/static/js/save_db_settings.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/ClientAndHotspot.py" afterPath="$PROJECT_DIR$/adminka/source_code/clientAndHotspot.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/Firewall.py" afterPath="$PROJECT_DIR$/adminka/source_code/firewall.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/Location.py" afterPath="$PROJECT_DIR$/adminka/source_code/location.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/MySqlWorker.py" afterPath="$PROJECT_DIR$/adminka/source_code/mySqlWorker.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/NetworkAdapters.py" afterPath="$PROJECT_DIR$/adminka/source_code/networkAdapters.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/accesspoint.py" afterPath="$PROJECT_DIR$/adminka/source_code/accessPoint.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/root.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/root.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/static/styles.css" afterPath="$PROJECT_DIR$/adminka/adminka/static/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/base.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/settings.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/settings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/urls.py" afterPath="$PROJECT_DIR$/adminka/adminka/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/views.py" afterPath="$PROJECT_DIR$/adminka/adminka/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/admin/widgets.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/admin/widgets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/db/backends/mysql/schema.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/db/backends/mysql/schema.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/forms/widgets.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/forms/widgets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/gdal/libgdal.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/gdal/libgdal.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/geos/libgeos.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/geos/libgeos.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/cached_db.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/cached_db.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/file.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/file.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/exception.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/exception.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/servers/basehttp.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/servers/basehttp.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/base/schema.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/base/schema.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/utils.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/middleware/csrf.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/middleware/csrf.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/loader_tags.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/loader_tags.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/runner.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/runner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/utils.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/utils.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/cache.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/cache.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/log.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/log.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/decorators/http.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/decorators/http.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/generic/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/generic/base.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/_cmd.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/_cmd.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/controller.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/compat.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/compat.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/database.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/database.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/index.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/index.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/locators.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/locators.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/manifest.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/manifest.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/metadata.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/metadata.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/resources.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/resources.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/scripts.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/scripts.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/util.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/version.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/version.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/wheel.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/wheel.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distro.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distro.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connection.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connection.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connectionpool.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connectionpool.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/appengine.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/appengine.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/poolmanager.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/poolmanager.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/util/retry.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/util/retry.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/basecommand.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/basecommand.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/check.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/check.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/download.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/download.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/hash.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/hash.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/install.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/install.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/list.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/list.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/search.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/show.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/show.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/wheel.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/wheel.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/dictconfig.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/dictconfig.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/download.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/download.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/index.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/index.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/operations/freeze.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/operations/freeze.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/pep425tags.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/pep425tags.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_install.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_install.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_set.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_set.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_uninstall.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_uninstall.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/deprecation.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/deprecation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/logging.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/logging.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/outdated.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/outdated.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/packaging.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/packaging.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/ui.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/ui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/bazaar.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/bazaar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/git.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/git.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/mercurial.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/mercurial.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/subversion.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/subversion.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/wheel.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/wheel.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/wheel/archive.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/wheel/archive.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg" afterPath="$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/logs/log_error.txt" afterPath="$PROJECT_DIR$/adminka/logs/log_error.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/logs/mySqlWorker.log" afterPath="$PROJECT_DIR$/adminka/logs/mySqlWorker.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/source_code/constants.py" afterPath="$PROJECT_DIR$/adminka/source_code/constants.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,35 +115,40 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminka/source_code/constants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminka/adminka/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+            <state relative-caret-position="504">
+              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
+                <element signature="e#181#657#0" expanded="false" />
+                <element signature="e#692#1267#0" expanded="false" />
+                <element signature="e#1302#1584#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NetworkAdapters.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminka/source_code/NetworkAdapters.py">
+      <file leaf-file-name="mySqlWorker.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adminka/source_code/mySqlWorker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#114#4828#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="networkAdapters.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adminka/source_code/networkAdapters.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="146" column="31" lean-forward="true" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
+              <folding>
                 <element signature="e#337#852#0" expanded="false" />
                 <element signature="e#907#1323#0" expanded="false" />
                 <element signature="e#1376#1794#0" expanded="false" />
@@ -63,11 +162,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/settings.html">
+      <file leaf-file-name="Logging.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adminka/source_code/Logging.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            <state relative-caret-position="126">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mySqlConfig.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -76,28 +187,38 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminka/adminka/static/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="805">
-              <caret line="129" column="24" lean-forward="false" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
+            <state relative-caret-position="582">
+              <caret line="120" column="17" lean-forward="true" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="map.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/map.html">
+      <file leaf-file-name="db_settings.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adminka/adminka/static/js/db_settings.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+              <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/base.html">
+      <file leaf-file-name="load_settings.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/load_settings.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="450">
+              <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/settings.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="61" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -108,8 +229,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -134,7 +255,6 @@
         <option value="$PROJECT_DIR$/Complete/MySqlWorker.py" />
         <option value="$PROJECT_DIR$/Complete/logs/mySqlWorker.log" />
         <option value="$PROJECT_DIR$/adminka/adminka/static/saveDBSettings.js" />
-        <option value="$PROJECT_DIR$/adminka/adminka/templates/base.html" />
         <option value="$PROJECT_DIR$/adminka/adminka/templates/map.html" />
         <option value="$PROJECT_DIR$/adminka/source/MySqlWorker.py" />
         <option value="$PROJECT_DIR$/adminka/source/NetworkAdapters.py" />
@@ -142,26 +262,33 @@
         <option value="$PROJECT_DIR$/adminka/source_code/Firewall.py" />
         <option value="$PROJECT_DIR$/adminka/source_code/Logging.py" />
         <option value="$PROJECT_DIR$/adminka/source_code/ClientAndHotspot.py" />
-        <option value="$PROJECT_DIR$/adminka/adminka/urls.py" />
         <option value="$PROJECT_DIR$/adminka/source_code/accesspoint.py" />
         <option value="$PROJECT_DIR$/adminka/manage.py" />
-        <option value="$PROJECT_DIR$/adminka/source_code/constants.py" />
         <option value="$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg" />
         <option value="$PROJECT_DIR$/adminka/source_code/MySqlWorker.py" />
         <option value="$PROJECT_DIR$/adminka/adminka/settings.py" />
         <option value="$PROJECT_DIR$/adminka/adminka/static/js/save_db_settings.js" />
         <option value="$PROJECT_DIR$/adminka/logs/mySqlWorker.log" />
         <option value="$PROJECT_DIR$/adminka/source_code/NetworkAdapters.py" />
-        <option value="$PROJECT_DIR$/adminka/adminka/views.py" />
+        <option value="$PROJECT_DIR$/adminka/adminka/static/js/load_db_settings.js" />
+        <option value="$PROJECT_DIR$/adminka/adminka/static/js/jquery.js" />
+        <option value="$PROJECT_DIR$/adminka/adminka/templates/base.html" />
+        <option value="$PROJECT_DIR$/adminka/adminka/urls.py" />
+        <option value="$PROJECT_DIR$/adminka/source_code/constants.py" />
+        <option value="$PROJECT_DIR$/adminka/source_code/mySqlWorker.py" />
+        <option value="$PROJECT_DIR$/adminka/adminka/static/js/db_settings.js" />
         <option value="$PROJECT_DIR$/adminka/adminka/static/styles.css" />
         <option value="$PROJECT_DIR$/adminka/adminka/templates/settings.html" />
+        <option value="$PROJECT_DIR$/adminka/adminka/templates/load_settings.html" />
+        <option value="$PROJECT_DIR$/adminka/adminka/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1919" />
+    <option name="x" value="-1" />
+    <option name="y" value="25" />
     <option name="width" value="1922" />
-    <option name="height" value="1201" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -178,7 +305,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,6 +329,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="adminka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wifiWorker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wifiWorker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adminka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source_code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wifiWorker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wifiWorker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="adminka" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -269,7 +432,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -278,6 +441,9 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/adminka/adminka/static/js" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/adminka/configs" />
       <recent name="$PROJECT_DIR$/adminka/source_code" />
@@ -316,24 +482,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="wifiWorker" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminka/source_code/MySqlWorker.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="NetworkAdapters" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adminka/source_code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="wifiWorker" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminka/source_code/NetworkAdapters.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminka/source_code/mySqlWorker.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -489,17 +638,33 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="NetworkAdapters" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/adminka/source_code" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="wifiWorker" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/adminka/source_code/networkAdapters.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.__init__" />
-      <item index="1" class="java.lang.String" itemvalue="Python.MySqlWorker" />
-      <item index="2" class="java.lang.String" itemvalue="Python.MySqlWorker (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.NetworkAdapters" />
+      <item index="1" class="java.lang.String" itemvalue="Python.NetworkAdapters" />
+      <item index="2" class="java.lang.String" itemvalue="Python.MySqlWorker" />
+      <item index="3" class="java.lang.String" itemvalue="Python.MySqlWorker (1)" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.NetworkAdapters" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MySqlWorker (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.MySqlWorker" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.MySqlWorker (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.MySqlWorker" />
       </list>
     </recent_temporary>
   </component>
@@ -528,11 +693,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497861813893</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="20170620">
+      <created>1497977870041</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1497977870041</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="0" width="1922" height="1201" extended-state="6" />
+    <frame x="-1" y="25" width="1922" height="1176" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -564,15 +736,55 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="20170611" />
     <MESSAGE value="20170619" />
-    <option name="LAST_COMMIT_MESSAGE" value="20170619" />
+    <MESSAGE value="20170620" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170620" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#181#657#0" expanded="false" />
+            <element signature="e#692#1267#0" expanded="false" />
+            <element signature="e#1302#1584#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/networkAdapters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="774">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16#0" expanded="false" />
+            <element signature="e#337#852#0" expanded="false" />
+            <element signature="e#907#1323#0" expanded="false" />
+            <element signature="e#1376#1794#0" expanded="false" />
+            <element signature="e#1855#2332#0" expanded="false" />
+            <element signature="e#2386#2699#0" expanded="false" />
+            <element signature="e#2758#3484#0" expanded="false" />
+            <element signature="e#3537#4443#0" expanded="false" />
+            <element signature="e#4496#5321#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/adminka/source_code/constants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -613,21 +825,14 @@
     <entry file="file://$PROJECT_DIR$/adminka/adminka/source/__init__.py" />
     <entry file="file://$PROJECT_DIR$/adminka/adminka/__init__.py" />
     <entry file="file://$PROJECT_DIR$/adminka/source_code/log_error.txt" />
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/Location.py">
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/location.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="2" selection-end-line="26" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/Logging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/accesspoint.py">
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/accessPoint.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
@@ -641,17 +846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/Firewall.py">
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/firewall.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="23" lean-forward="true" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -662,24 +860,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/ClientAndHotspot.py">
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/clientAndHotspot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="70" lean-forward="false" selection-start-line="0" selection-start-column="70" selection-end-line="0" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/MySqlWorker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="37" column="52" lean-forward="false" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -704,30 +888,129 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/constants.py">
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/js/hello.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/views.py">
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/js/save_db_settings.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="72" lean-forward="false" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+        <state relative-caret-position="306">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" lean-forward="false" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
           <folding>
-            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#641#673#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/source_code/NetworkAdapters.py">
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/map.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="120" column="17" lean-forward="true" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="61" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/js/db_settings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/load_settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/mySqlWorker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#114#4828#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/Logging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminka/source_code/networkAdapters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="146" column="31" lean-forward="true" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
+          <folding>
             <element signature="e#337#852#0" expanded="false" />
             <element signature="e#907#1323#0" expanded="false" />
             <element signature="e#1376#1794#0" expanded="false" />
@@ -740,51 +1023,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/js/hello.js">
+    <entry file="file://$PROJECT_DIR$/adminka/adminka/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/map.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/js/save_db_settings.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/static/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="129" column="24" lean-forward="false" selection-start-line="129" selection-start-column="24" selection-end-line="129" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminka/adminka/templates/settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="24" lean-forward="true" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="504">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+            <element signature="e#181#657#0" expanded="false" />
+            <element signature="e#692#1267#0" expanded="false" />
+            <element signature="e#1302#1584#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
