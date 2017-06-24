@@ -2,105 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6830ac21-2cf5-4b16-a4f6-46f4852e43d0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/static/js/db_settings.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/static/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/templates/load_settings.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/adminka/adminka/static/js/save_db_settings.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/ClientAndHotspot.py" afterPath="$PROJECT_DIR$/adminka/source_code/clientAndHotspot.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/Firewall.py" afterPath="$PROJECT_DIR$/adminka/source_code/firewall.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/Location.py" afterPath="$PROJECT_DIR$/adminka/source_code/location.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/MySqlWorker.py" afterPath="$PROJECT_DIR$/adminka/source_code/mySqlWorker.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/NetworkAdapters.py" afterPath="$PROJECT_DIR$/adminka/source_code/networkAdapters.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/source_code/accesspoint.py" afterPath="$PROJECT_DIR$/adminka/source_code/accessPoint.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/root.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/root.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/static/styles.css" afterPath="$PROJECT_DIR$/adminka/adminka/static/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/base.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/settings.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/urls.py" afterPath="$PROJECT_DIR$/adminka/adminka/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/views.py" afterPath="$PROJECT_DIR$/adminka/adminka/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/admin/widgets.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/admin/widgets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/db/backends/mysql/schema.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/db/backends/mysql/schema.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/forms/widgets.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/forms/widgets.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/gdal/libgdal.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/gdal/libgdal.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/geos/libgeos.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/gis/geos/libgeos.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/cached_db.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/cached_db.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/db.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/file.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/contrib/sessions/backends/file.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/exception.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/handlers/exception.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/servers/basehttp.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/core/servers/basehttp.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/base/schema.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/base/schema.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/utils.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/db/backends/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/middleware/csrf.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/middleware/csrf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/loader_tags.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/template/loader_tags.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/runner.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/runner.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/utils.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/test/utils.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/cache.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/cache.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/log.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/utils/log.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/decorators/http.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/decorators/http.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/generic/base.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/django/views/generic/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/_cmd.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/_cmd.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/controller.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/cachecontrol/controller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/compat.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/compat.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/database.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/index.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/locators.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/locators.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/manifest.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/manifest.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/metadata.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/metadata.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/resources.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/resources.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/scripts.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/scripts.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/util.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/util.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/version.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/version.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/wheel.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distlib/wheel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distro.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/distro.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connection.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connection.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connectionpool.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/connectionpool.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/appengine.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/appengine.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/contrib/ntlmpool.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/poolmanager.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/poolmanager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/util/retry.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/_vendor/requests/packages/urllib3/util/retry.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/basecommand.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/basecommand.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/check.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/check.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/download.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/download.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/hash.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/hash.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/install.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/install.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/list.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/list.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/search.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/search.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/show.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/show.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/wheel.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/commands/wheel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/dictconfig.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/compat/dictconfig.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/download.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/download.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/index.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/index.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/operations/freeze.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/operations/freeze.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/pep425tags.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/pep425tags.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_install.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_install.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_set.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_set.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_uninstall.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/req/req_uninstall.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/deprecation.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/deprecation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/logging.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/logging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/outdated.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/outdated.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/packaging.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/packaging.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/ui.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/utils/ui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/__init__.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/bazaar.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/bazaar.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/git.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/git.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/mercurial.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/mercurial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/subversion.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/vcs/subversion.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/wheel.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/pip/wheel.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/wheel/archive.py" afterPath="$PROJECT_DIR$/adminka/adminka_env/lib/python3.5/site-packages/wheel/archive.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg" afterPath="$PROJECT_DIR$/adminka/configs/mySqlConfig.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/logs/log_error.txt" afterPath="$PROJECT_DIR$/adminka/logs/log_error.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/logs/mySqlWorker.log" afterPath="$PROJECT_DIR$/adminka/logs/mySqlWorker.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/source_code/constants.py" afterPath="$PROJECT_DIR$/adminka/source_code/constants.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -700,7 +602,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497977870041</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="20170624">
+      <created>1498323247285</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1498323247285</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -737,7 +646,8 @@
     <MESSAGE value="20170611" />
     <MESSAGE value="20170619" />
     <MESSAGE value="20170620" />
-    <option name="LAST_COMMIT_MESSAGE" value="20170620" />
+    <MESSAGE value="20170624" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170624" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
