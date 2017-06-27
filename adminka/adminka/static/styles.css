@@ -6,32 +6,31 @@ body {
 	margin: 0;
 }
 aside {
-	width: 22%;
-	height: 600px;
+	width: 25%;
+	height: 650px;
 	background: #C0C0C0;
 	color: #000000;
 	float: right;
 	border: 2px solid black;
-	margin: 20px;
-    padding-bottom: 50px;
+	margin: 10px;
+	overflow-y: auto;
 }
 section {
-	width: 75%;
-	height: 600px;
+	width: 73%;
+	height: 650px;
     color: #000000;
     background: #808080;
 	margin-left: 280px;
-	padding-bottom: 50px;
     border: 2px solid black;
-	margin: 30px;
+	margin: 10px;
+	overflow-y: auto;
 }
 
 footer {
-	height: 40px;
+	height: 10px;
 	color: #000000;
 	border: 2px solid black;
-	margin: 20px;
-	padding-bottom: 10px;
+	margin: 10px;
 
 	position: fixed; /* Фиксированное положение */
     left: 0; bottom: 0; /* Левый нижний угол */
@@ -112,15 +111,15 @@ nav li {
     height: 600px;
 }
 #settings_bd{
-    margin: 40px;
+    margin: 10px;
     width: 35%;
-    height: 580px;
+    height: 620px;
     border: 2px solid black;
 }
 #settings_iface{
     margin: 10px;
     width: 62%;
-    height: 580px;
+    height: 620px;
     float: right;
     border: 2px solid black;
 }
@@ -129,7 +128,7 @@ nav li {
     width: 40%;
     background: #C0C0C0;
     border: None;
-    height: 400px;
+    height: 350px;
 }
 
 #air_iface{
@@ -137,5 +136,5 @@ nav li {
     width: 50%;
     background: #C0C0C0;
     border: None;
-    height: 400px;
+    height: 350px;
 }

@@ -1,0 +1,5 @@
+{% for row in log_rows %}
+    <p>{{ row }}</p>
+{% empty %}
+    <p>В логах пока пусто...</p>
+{% endfor %}

@@ -1,7 +1,11 @@
+import subprocess
+
 from django.shortcuts import render_to_response
-from constants import *
-from mySqlWorker import MySqlWorker
-from networkAdapters import NetworkAdapters
+from adminka.source_code.constants import *
+from adminka.source_code.mySqlWorker import MySqlWorker
+from adminka.source_code.networkAdapters import NetworkAdapters
+from adminka.source_code.logging import Logging
+import os
 
 
 def settings(request):
@@ -42,6 +46,21 @@ def settings_load(request):
         status = 0
     db_settings['connection_status'] = status
     return render_to_response('load_settings.html', db_settings)
+
+
+def get_tail_log(request):
+    try:
+        count = int(request.GET['count_rows'])
+        name = request.GET['file_name']
+    except Exception as ex:
+        return render_to_response("get_logs.html", {'log_rows': []})
+    f = open(LOGS_DIR_NAME + name, 'r')
+    rows = f.readlines()
+    f.close()
+    if len(rows) < count:
+        return render_to_response("get_logs.html", {'log_rows': rows.reverse()})
+    else:
+        return render_to_response("get_logs.html", {'log_rows': sorted(rows[len(rows) - count:], reverse=True)})
 
 
 def iface_change_state(request):

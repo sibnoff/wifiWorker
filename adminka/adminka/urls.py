@@ -14,16 +14,16 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
 from adminka.views import settings, monitoring, hotspot, \
     sniff, jammer, proxy_server, rainbow_tables, map_working, \
-    download, help_page, settings_save, settings_load
+    download, help_page, settings_save, settings_load, get_tail_log
 
 urlpatterns = [
     url(r'^$', settings),
     url(r'^settings/$', settings),
     url(r'^settings/save/$', settings_save),
     url(r'^settings/load/$', settings_load),
+    url(r'^get-logs/$', get_tail_log),
     url(r'^monitoring/$', monitoring),
     url(r'^hotspot/$', hotspot),
     url(r'^sniff/$', sniff),

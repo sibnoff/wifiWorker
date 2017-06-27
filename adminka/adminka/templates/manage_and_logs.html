@@ -1,6 +1,32 @@
 {% extends "base.html" %}
 		{% block content %}
-            <aside>{% block logs %}{% endblock %}</aside>
+            <aside>
+                {% block logs %}
+                <div id="heading_2">Логи</div>
+                <output id="logs">
+                    {% for row in log_rows %}
+                        <p>{{ row }}</p>
+                    {% empty %}
+                        <p>В логах пока пусто...</p>
+                    {% endfor %}
+                </output>
+                <script>
+                    function getLogs(count, file_name) {
+                        $.ajax({url: "/get-logs/",
+                        type: "GET",
+                        cache: false,
+                        data: "count_rows=" + count + "&file_name=" + file_name,
+                        success: onAjaxSuccess
+                    });
+                        function onAjaxSuccess(data)
+                        {
+                            $("#logs").html(data);
+                        }
+                    }
+                    setInterval(getLogs("30", "main.log"), 2000);
+                </script>
+                {% endblock %}
+            </aside>
             <section class="content">{% block managment %}{% endblock %}</section>
         {% endblock %}
 
