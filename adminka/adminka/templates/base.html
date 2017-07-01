@@ -8,32 +8,30 @@
 		<script type="text/javascript" src="/static/js/jquery.js"></script>
 	</head>
 	<body>
-		<div id="wrapper">
-			<header>
-				<h1>Тестирование безопасности Wi-Fi сетей</h1>
-			</header>
-			<hr id="border">
-			<nav>
-				<ul class="top-menu">
-					<li><a href="/settings/">Настройки</a></li>
-					<li><a href="/monitoring/">Мониторинг</a></li>
-					<li><a href="/hotspot/">Точка доступа</a></li>
-					<li><a href="/sniff/">Захват пакетов</a></li>
-					<li><a href="/jammer/">Инъекции в эфир</a></li>
-					<li><a href="/proxyserver/">Прокси сервер</a></li>
-					<li><a href="/rainbowtables/">Подбор пароля</a></li>
-					<li><a href="/mapworking/">Работа с картой</a></li>
-					<li><a href="/download/">Выгрузка файлов</a></li>
-					<li><a href="/help/">Справка</a></li>
-				</ul>
-			</nav>
-			<hr id="border">
-			<div id="heading">
-				{{ page_name }}
-			</div>
-			{% block content %}
-			{% endblock %}
+		<header>
+			<h1>Тестирование безопасности Wi-Fi сетей</h1>
+		</header>
+		<hr id="border">
+		<nav>
+			<ul class="top-menu">
+				<li><a href="/settings/">Настройки</a></li>
+				<li><a href="/monitoring/">Мониторинг</a></li>
+				<li><a href="/hotspot/">Точка доступа</a></li>
+				<li><a href="/sniff/">Захват пакетов</a></li>
+				<li><a href="/jammer/">Инъекции в эфир</a></li>
+				<li><a href="/proxyserver/">Прокси сервер</a></li>
+				<li><a href="/rainbowtables/">Подбор пароля</a></li>
+				<li><a href="/mapworking/">Работа с картой</a></li>
+				<li><a href="/download/">Выгрузка файлов</a></li>
+				<li><a href="/help/">Справка</a></li>
+			</ul>
+		</nav>
+		<hr id="border">
+		<div id="heading">
+			{{ page_name }}
 		</div>
+		{% block content %}
+		{% endblock %}
 		<hr id="border">
 		<footer>
 			{% block footer %}

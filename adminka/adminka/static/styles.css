@@ -7,7 +7,7 @@ body {
 }
 aside {
 	width: 25%;
-	height: 420px;
+	height: 80vh;
 	background: #C0C0C0;
 	color: #000000;
 	float: right;
@@ -17,11 +17,10 @@ aside {
 }
 section {
 	width: 73%;
-	height: 420px;
+	height: 80vh;
     color: #000000;
     background: #808080;
-	margin-left: 280px;
-    border: 2px solid black;
+	border: 2px solid black;
 	margin: 5px;
 	overflow-y: auto;
 }
@@ -45,7 +44,7 @@ h1 {
 }
 hr {
 	color: #000000;
-	size: '3';
+	size: 3;
 }
 header {
     text-align: center;
@@ -106,21 +105,22 @@ nav li {
 }
 
 #map {
-    margin: 10px;
+	position:absolute;
+    margin: 20px;
     width: 70%;
-    height: 420px;
+	height: 80vh;
 }
 #settings_bd{
     margin: 5px;
     width: 44%;
-    height: 390px;
+    height: 90%;
     border: None;
 }
 #settings_iface{
     background: #808080;
     margin: 5px;
     width: 53%;
-    height: 390px;
+    height: 90%;
     float: right;
     border: None;
 }
@@ -128,7 +128,7 @@ nav li {
     margin: 5px;
     width: 40%;
     border: None;
-    height: 360px;
+    height: 90%;
 }
 
 #air_iface{
@@ -136,7 +136,7 @@ nav li {
     width: 55%;
     background: #808080;
     border: None;
-    height: 360px;
+    height: 90%;
 }
 #logs{
     font: 9px 'Oswald', sans-serif;

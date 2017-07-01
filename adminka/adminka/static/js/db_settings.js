@@ -15,10 +15,15 @@ function saveSettings() {
     }
 }
 function loadSettings() {
-    $.ajax({url: "load/", cache: false, success: function (html){$("#settings_bd").html(html);}});
+    $.ajax({url: "load/",
+            cache: false,
+            success: function (html){$("#settings_bd").html(html);
+                    alert('Настройки успешно загружены!');}});
 }
 function testConnection() {
-    $.ajax({url: "load/", cache: false, success: function (html){$("#settings_bd").html(html);}});
+    $.ajax({url: "load/",
+            cache: false,
+            success: function (html){$("#settings_bd").html(html);}});
 }
 
 $('#save_set').on('click', saveSettings)

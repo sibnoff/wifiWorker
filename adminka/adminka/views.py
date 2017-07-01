@@ -58,7 +58,7 @@ def get_tail_log(request):
     rows = f.readlines()
     f.close()
     if len(rows) < count:
-        return render_to_response("get_logs.html", {'log_rows': rows.reverse()})
+        return render_to_response("get_logs.html", {'log_rows': sorted(rows, reverse=True)})
     else:
         return render_to_response("get_logs.html", {'log_rows': sorted(rows[len(rows) - count:], reverse=True)})
 
