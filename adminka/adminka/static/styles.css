@@ -3,26 +3,26 @@ body {
 	font: 12px Tahoma, sans-serif;
 	background: #2F4F4F;
 	border-top: 5px solid #7e7e7e;
-	margin: 0;
+	margin: 10;
 }
 aside {
 	width: 25%;
-	height: 650px;
+	height: 420px;
 	background: #C0C0C0;
 	color: #000000;
 	float: right;
 	border: 2px solid black;
-	margin: 10px;
+	margin: 5px;
 	overflow-y: auto;
 }
 section {
 	width: 73%;
-	height: 650px;
+	height: 420px;
     color: #000000;
     background: #808080;
 	margin-left: 280px;
     border: 2px solid black;
-	margin: 10px;
+	margin: 5px;
 	overflow-y: auto;
 }
 
@@ -41,7 +41,7 @@ footer {
 h1 {
 	display: inline-block;
 	color: #000000;
-	font: 25px 'Oswald', sans-serif;
+	font: 15px 'Oswald', sans-serif;
 }
 hr {
 	color: #000000;
@@ -60,24 +60,24 @@ a:hover {
 }
 
 nav ul {
-	margin: 10px;
-	padding-bottom: 10px;
+	margin: 5px;
+	padding-bottom: 5px;
 }
 
 nav li {
 	list-style-position: inside;
-	font: 16px 'Oswald', sans-serif;
-	padding: 10px;
+	font: 12px 'Oswald', sans-serif;
+	padding: 5px;
 }
 
 .top-menu li {
 	background: #C0C0C0;
 	display: inline-block;
-	padding: 10px 30px;
-	margin: 0;
-	-webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 10px;
+	padding: 5px 15px;
+	margin: 10;
+	-webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 5px;
     -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
@@ -92,49 +92,52 @@ nav li {
 }
 
 #heading {
-	margin: 50;
+	margin: 10;
 	text-align: center;
 	color: #000000;
-	font: 30px/30px 'Oswald', sans-serif;
+	font: 15px 'Oswald', sans-serif;
 }
 
 #heading_2 {
 	margin: 50;
 	text-align: center;
 	color: #000000;
-	font: 20px/20px 'Oswald', sans-serif;
+	font: 15px 'Oswald', sans-serif;
 }
 
 #map {
-    margin: 20px;
+    margin: 10px;
     width: 70%;
-    height: 600px;
+    height: 420px;
 }
 #settings_bd{
-    margin: 10px;
-    width: 35%;
-    height: 620px;
-    border: 2px solid black;
+    margin: 5px;
+    width: 44%;
+    height: 390px;
+    border: None;
 }
 #settings_iface{
-    margin: 10px;
-    width: 62%;
-    height: 620px;
+    background: #808080;
+    margin: 5px;
+    width: 53%;
+    height: 390px;
     float: right;
-    border: 2px solid black;
+    border: None;
 }
 #all_iface{
-    margin: 10px;
+    margin: 5px;
     width: 40%;
-    background: #C0C0C0;
     border: None;
-    height: 350px;
+    height: 360px;
 }
 
 #air_iface{
-    margin: 10px;
-    width: 50%;
-    background: #C0C0C0;
+    margin: 5px;
+    width: 55%;
+    background: #808080;
     border: None;
-    height: 350px;
+    height: 360px;
+}
+#logs{
+    font: 9px 'Oswald', sans-serif;
 }

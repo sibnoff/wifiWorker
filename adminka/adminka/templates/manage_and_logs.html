@@ -5,28 +5,31 @@
                 <div id="heading_2">Логи</div>
                 <output id="logs">
                     {% for row in log_rows %}
-                        <p>{{ row }}</p>
-                    {% empty %}
-                        <p>В логах пока пусто...</p>
+                        {{ row }}<br>
                     {% endfor %}
                 </output>
+                {% endblock %}
+            </aside>
+            <section class="content">
+                {% block managment %}
+                {% endblock %}
+            </section>
+        {% endblock %}
+        {% block scripts %}
                 <script>
-                    function getLogs(count, file_name) {
+                    function onAjaxSuccess(data)
+                    {
+                        $("#logs").html(data);
+                    }
+                    function getLogs()
+                    {
                         $.ajax({url: "/get-logs/",
                         type: "GET",
                         cache: false,
-                        data: "count_rows=" + count + "&file_name=" + file_name,
-                        success: onAjaxSuccess
-                    });
-                        function onAjaxSuccess(data)
-                        {
-                            $("#logs").html(data);
-                        }
+                        data: "count_rows=30" + "&file_name=main.log",
+                        success: onAjaxSuccess});
                     }
-                    setInterval(getLogs("30", "main.log"), 2000);
+                    setInterval(getLogs, 1000);
                 </script>
-                {% endblock %}
-            </aside>
-            <section class="content">{% block managment %}{% endblock %}</section>
         {% endblock %}
 

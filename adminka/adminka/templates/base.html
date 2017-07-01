@@ -28,11 +28,18 @@
 				</ul>
 			</nav>
 			<hr id="border">
-			<div id="heading">{{ page_name }}</div>
-			{% block content %}{% endblock %}
+			<div id="heading">
+				{{ page_name }}
+			</div>
+			{% block content %}
+			{% endblock %}
 		</div>
 		<hr id="border">
-		<footer>{% block footer %}{% endblock %}</footer>
-		{% block scripts %}{% endblock %}
+		<footer>
+			{% block footer %}
+			{% endblock %}
+		</footer>
+		{% block scripts %}
+		{% endblock %}
 	</body>
 </html>
