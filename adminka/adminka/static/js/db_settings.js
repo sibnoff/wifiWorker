@@ -1,5 +1,5 @@
 function saveSettings() {
-    $.ajax({url: "save/",
+    $.ajax({url: "/save-settings/",
             type: "POST",
             cache: false,
             data: "db_host=" + $('#db_ip').val() +
@@ -15,13 +15,13 @@ function saveSettings() {
     }
 }
 function loadSettings() {
-    $.ajax({url: "load/",
+    $.ajax({url: "/load-settings/",
             cache: false,
             success: function (html){$("#settings_bd").html(html);
                     alert('Настройки успешно загружены!');}});
 }
 function testConnection() {
-    $.ajax({url: "load/",
+    $.ajax({url: "/load-settings/",
             cache: false,
             success: function (html){$("#settings_bd").html(html);}});
 }

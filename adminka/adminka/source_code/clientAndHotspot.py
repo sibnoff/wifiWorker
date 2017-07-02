@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 import datetime
 import json
-
-from Logging import Logging
-from mySqlWorker import MySqlWorker
-from constants import *
+from adminka.source_code.constants import *
+from adminka.source_code.logging import Logging
+from adminka.source_code.mySqlWorker import MySqlWorker
 
 
 class Client:
@@ -35,7 +32,7 @@ class Client:
 
     # вставляем (обновляем) информацию о клиенте в БД
     def insert_info(self):
-        mw = MySqlWorker()
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
         query_insert = "insert into {}.clients (dateInsert, mac, " \
                        "nick, lastEssid, dateUpdate) values " \
                        "('{}', '{}', '{}', '{}', '{}')" \
@@ -47,30 +44,80 @@ class Client:
         if mw.execute_none(query_insert) is None:
             self._log.write_log("INSERT_ERROR", "Не удалось выполнить вставку клиента.")
 
+    # вставляем информацию о местоположении клиента
+    @staticmethod
+    def insert_geolocation(mac, location):
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
+        query_insert = "insert into {}.geolocations (dateInsert, clients_mac, location) values " \
+                       "('{}', '{}', '{}');".format(DB_NAME, datetime.datetime.now(),
+                                                    mac, location)
+        if mw.execute_none(query_insert) is None:
+            lg = Logging(LOGS_DIR_NAME + 'main.log')
+            lg.write_log("INSERT_ERROR", "Не удалось выполнить вставку местоположения.")
+            return False
+        return True
+
+    # получаем самый свежий мак адрес по ip адресу
+    @staticmethod
+    def get_mac_for_ip(ip):
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
+        query_mac = 'select clients_mac from {}.addresses where ' \
+                    'clients_ip = {} order by dateInsert desc limit 1'.format(DB_NAME, ip)
+        tmp = mw.execute_scalar(query_mac)
+        if tmp is None:
+            lg = Logging(LOGS_DIR_NAME + 'main.log')
+            lg.write_log("SELECT_ERROR", "Не удалось выполнить запрос ника клиента.")
+            return None
+        return tmp[0]
+
+    # вставляем информацию о подключении клиента к ТД
+    @staticmethod
+    def insert_connection(mac, bssid, essid):
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
+        query_insert = "insert into {}.connections (dateInsert, clients_mac, bssid, essid) values " \
+                       "('{}', '{}', '{}', '{}');".format(DB_NAME, datetime.datetime.now(),
+                                                          mac, bssid, essid)
+        if mw.execute_none(query_insert) is None:
+            lg = Logging(LOGS_DIR_NAME + 'main.log')
+            lg.write_log("INSERT_ERROR", "Не удалось выполнить вставку информации о подключении к ТД.")
+            return False
+        return True
+
     # получаем ник для mac адреса из БД
     @staticmethod
     def get_nick(mac):
-        mw = MySqlWorker()
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
         query_nick = 'select nick from {}.clients where mac = {} limit 1'.format(DB_NAME, mac)
         tmp = mw.execute_scalar(query_nick)
         if tmp is None:
-            lg = Logging('Complete/logs/main.log')
+            lg = Logging(LOGS_DIR_NAME + 'main.log')
             lg.write_log("SELECT_ERROR", "Не удалось выполнить запрос ника клиента.")
             return None
         return tmp[0]
 
     # обновляем ник клиента в БД
     def update_nick_in_db(self):
-        mw = MySqlWorker()
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
         query_update = "update {}.clients set nick = '{}' " \
                        "where mac = '{}'".format(DB_NAME, self._nick,
                                                  self._mac)
         if mw.execute_none(query_update) is None:
             self._log.write_log("UPDATE_ERROR", "Не удалось выполнить обновление ника клиента.")
 
+    # обновляем юзерагента клиента по маку
+    @staticmethod
+    def update_user_agent(user_agent, mac):
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
+        query_update = "update {}.clients set userAgent = '{}' " \
+                       "where mac = '{}'".format(DB_NAME, user_agent, mac)
+        if mw.execute_none(query_update) is None:
+            lg = Logging(LOGS_DIR_NAME + 'main.log')
+            lg.write_log("UPDATE_ERROR", "Не удалось выполнить обновление информации о UserAgent клиента.")
+            return False
+
     # получаем всю информацию о клиенте из таблицы clients
     def get_info(self):
-        mw = MySqlWorker()
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
         query_info = 'select * from {}.clients where mac = {} limit 1'.format(DB_NAME, self._mac)
         tmp = mw.execute_scalar(query_info)
         if tmp is None:
@@ -81,28 +128,29 @@ class Client:
 
 class Hotspot:
     def __init__(self, bssid, essid, latitude, longitude):
-        self._bssid = bssid
-        self._essid = essid
-        self._loc_lat = latitude
-        self._loc_lon = longitude
-        self._log = Logging('Complete/logs/main.log')
+        self.bssid = bssid
+        self.essid = essid
+        self.lat = latitude
+        self.lon = longitude
+        self._log = Logging(LOGS_DIR_NAME + 'main.log')
 
     # метод преобразует координаты в json
-    def loc_to_json(self):
-        data = {"lat": self._loc_lat, "lon": self._loc_lon}
+    @staticmethod
+    def loc_to_json(lat, lon):
+        data = {"lat": lat, "lon": lon}
         return json.dumps(data)
 
     # задаем координаты ТД
     def set_location(self, latitude, longitude):
-        self._loc_lat = latitude
-        self._loc_lon = longitude
+        self.lat = latitude
+        self.lon = longitude
 
     # вставляем инфу о ТД в БД
     def insert_info(self):
-        mw = MySqlWorker()
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
         query_clone = "select count(*) from {}.hotspots where essid = '{}' " \
-                      "and bssid = '{}'".format(DB_NAME, self._essid,
-                                                self._bssid)
+                      "and bssid = '{}'".format(DB_NAME, self.essid,
+                                                self.bssid)
         tmp = mw.execute_scalar(query_clone)
         if tmp is None:
             self._log.write_log('SELECT_ERROR', 'Не удалось поискать информацию о ТД.')
@@ -119,25 +167,46 @@ class Hotspot:
         query_insert = "insert into {}.hotspots (dateInsert, essid, " \
                        "bssid, location, dateUpdate) values ('{}', '{}', " \
                        "'{}', '{}', '{}')".format(DB_NAME, datetime.datetime.now(),
-                                                  self._essid, self._bssid,
-                                                  self.loc_to_json(),
+                                                  self.essid, self.bssid,
+                                                  Hotspot.loc_to_json(self.lat, self.lon),
                                                   datetime.datetime.now())
         if mw.execute_none(query_insert) is None:
             self._log.write_log("INSERT_ERROR", "Не удалось выполнить вставку ТД.")
 
     # получаем инфу о ТД из БД
-    def get_info(self):
-        mw = MySqlWorker()
-        query_info = "select * from {}.hotspots where " \
-                     "essid = '{}' and bssid = '{}' " \
-                     "limit 1".format(DB_NAME, self._essid,
-                                      self._bssid)
-        tmp = mw.execute_scalar(query_info)
-        if tmp is None:
+    def get_info_bssid(self):
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
+        query_info = "select essid, location from {}.hotspots where " \
+                     "bssid = '{}' limit 1".format(DB_NAME, self.bssid)
+        result = mw.execute(query_info)
+        if result is None:
             self._log.write_log("SELECT_ERROR", "Не удалось выполнить запрос информации о ТД.")
             return None
-        return tmp
+        if len(result) == 0:
+            self._log.write_log("NOT_FOUND", "Не удалось найти информацию о ТД.")
+            return None
+        self.essid = result[0][0]
+        self.lat = json.loads(result[0][1])['lat']
+        self.lon = json.loads(result[0][1])['lon']
+        self._log.write_log("FOUND", "Информация о ТД найдена.")
+        return True
 
+    def get_info_essid(self):
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
+        query_info = "select bssid, location from {}.hotspots where " \
+                     "essid = '{}' limit 1".format(DB_NAME, self.essid)
+        result = mw.execute(query_info)
+        if result is None:
+            self._log.write_log("SELECT_ERROR", "Не удалось выполнить запрос информации о ТД.")
+            return None
+        if len(result) == 0:
+            self._log.write_log("NOT_FOUND", "Не удалось найти информацию о ТД.")
+            return None
+        self.bssid = result[0][0]
+        self.lat = json.loads(result[0][1])['lat']
+        self.lon = json.loads(result[0][1])['lon']
+        self._log.write_log("FOUND", "Информация о ТД найдена.")
+        return True
 
 # cl = Client("123", '192.168.1.1', 'вапрв', 'чапртвп')
 # cl.insert_info()
@@ -172,9 +241,9 @@ class Hotspot:
 #     td = Hotspot(bssids[i], essids[i], '55.836449', '37.639242')
 #     td.insert_info()
 
-essids = open('Complete/essids_yasnogor', 'r').readlines()
-bssids = open('Complete/bssids_yasnogor', 'r').readlines()
-
-for i in range(len(essids)):
-    td = Hotspot(bssids[i], essids[i], '55.601738', '37.533458')
-    td.insert_info()
+# essids = open('Complete/essids_yasnogor', 'r').readlines()
+# bssids = open('Complete/bssids_yasnogor', 'r').readlines()
+#
+# for i in range(len(essids)):
+#     td = Hotspot(bssids[i], essids[i], '55.601738', '37.533458')
+#     td.insert_info()

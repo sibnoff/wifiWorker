@@ -1,4 +1,3 @@
 hostapd
-subprocess
-os
-time
+netifaces
+pymysql

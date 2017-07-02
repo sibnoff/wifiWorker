@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+    {% block content %}
+        <aside id="query_db">
+            <div id="heading_2">Запросы к БД</div>
+            <form id="query">
+                    <p><b>BSSID точки доступа:</b><br>
+                        <input type="text" size="25" id="bssid">
+                    </p>
+                    <p><b>ESSID точки доступа:</b><br>
+                        <input type="text" size="25" id="essid">
+                        <input type="button" value="Показать точку на карте" id="hotspot_show">
+                    </p>
+                    <p><b>MAC адрес клиента:</b><br>
+                        <input type="text" size="25" id="mac_client">
+                    </p>
+                    <p><b>Ник клиента:</b><br>
+                        <input type="text" size="25" id="nick_client">
+                        <input type="button" value="Показать местоположения на карте" id="client_show">
+                    </p>
+                    <p><br><br>
+                        <input type="button" value="Показать все ТД в текущей области" id="show_all_hotspot">
+                    </p>
+                </form>
+        </aside>
+        <section id="map_section">
+            <script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+            <script>
+                ymaps.ready(init);
+                function init() {
+                    var myMap = new ymaps.Map("map",
+                        {center: [54.314298, 48.395965], zoom: 12},
+                        {searchControlProvider: 'yandex#search'});
+                }
+            </script>
+            <div id="map"></div>
+        </section>
+    {% endblock %}
+    {% block scripts %}
+        <script type="text/javascript" src="/static/js/yandex_map.js"></script>
+    {% endblock %}

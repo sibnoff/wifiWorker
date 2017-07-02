@@ -1,27 +1,26 @@
 body {
 	color: #8f8f8f;
 	font: 12px Tahoma, sans-serif;
-	background: #2F4F4F;
-	border-top: 5px solid #7e7e7e;
-	margin: 10;
+	background: #35a3a7;
+	margin: 10px;
 }
 aside {
 	width: 25%;
-	height: 80vh;
+	height: 79vh;
 	background: #C0C0C0;
 	color: #000000;
 	float: right;
-	border: 2px solid black;
+	border: 1px solid black;
 	margin: 5px;
 	overflow-y: auto;
 }
 section {
 	width: 73%;
-	height: 80vh;
+	height: 79vh;
     color: #000000;
-    background: #808080;
-	border: 2px solid black;
-	margin: 5px;
+    background: #6b805e;
+	border: 1px solid black;
+	margin: 10px;
 	overflow-y: auto;
 }
 
@@ -42,9 +41,9 @@ h1 {
 	color: #000000;
 	font: 15px 'Oswald', sans-serif;
 }
-hr {
+#border{
 	color: #000000;
-	size: 3;
+	size: 4;
 }
 header {
     text-align: center;
@@ -73,13 +72,13 @@ nav li {
 	background: #C0C0C0;
 	display: inline-block;
 	padding: 5px 15px;
-	margin: 10;
+	margin: 10px;
 	-webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .top-menu li.active {
@@ -91,53 +90,59 @@ nav li {
 }
 
 #heading {
-	margin: 10;
+	margin: 5px;
 	text-align: center;
 	color: #000000;
 	font: 15px 'Oswald', sans-serif;
 }
 
 #heading_2 {
-	margin: 50;
+	margin: 5px;
 	text-align: center;
 	color: #000000;
 	font: 15px 'Oswald', sans-serif;
 }
 
 #map {
-	position:absolute;
-    margin: 20px;
-    width: 70%;
-	height: 80vh;
+    width: 100%;
+	height: 100%;
 }
 #settings_bd{
-    margin: 5px;
-    width: 44%;
+    margin: 10px;
+    width: 43%;
     height: 90%;
     border: None;
 }
 #settings_iface{
-    background: #808080;
-    margin: 5px;
+    background: #6b805e;
+    margin: 10px;
     width: 53%;
     height: 90%;
     float: right;
     border: None;
 }
 #all_iface{
-    margin: 5px;
+    margin: 10px;
     width: 40%;
     border: None;
     height: 90%;
 }
 
 #air_iface{
-    margin: 5px;
+    margin: 10px;
     width: 55%;
-    background: #808080;
+    background: #6b805e;
     border: None;
     height: 90%;
 }
 #logs{
+	margin: 15px;
     font: 9px 'Oswald', sans-serif;
+}
+
+#query_db{
+	margin: 5px;
+}
+#query{
+	margin: 10px;
 }

@@ -1,0 +1,54 @@
+<script src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script>
+    ymaps.ready(init);
+    function init()
+    {
+        var myMap = new ymaps.Map("map",
+            {center: [54.314298, 48.395965], zoom: 12},
+            {searchControlProvider: 'yandex#search'});
+
+        {% if show_hotspot %}
+            hotspot = new ymaps.GeoObject(
+            {geometry: {type: "Point", coordinates: ["{{ point.lat }}", "{{ point.lon }}"]},
+            properties:
+                {
+                    iconContent: "{{ point.essid }}",
+                    hintContent: "{{ point.bssid }}"
+                }
+            },
+            {preset: 'islands#blackStretchyIcon'})
+            myMap.geoObjects.add(hotspot)
+        {% endif %}
+
+        {% if show_client %}
+            {% for hs in hotspots %}
+                hotspot = new ymaps.GeoObject(
+                {geometry: {type: "Point", coordinates: ["{{ hs.lat }}", "{{ hs.lon }}"]},
+                properties:
+                    {
+                        iconContent: "{{ hs.date }}",
+                        hintContent: "{{ hs.bssid }}"
+                    }
+                },
+                {preset: 'islands#blackStretchyIcon'})
+                myMap.geoObjects.add(hotspot)
+            {% endfor %}
+        {% endif %}
+
+        {% if show_hotspots %}
+            {% for hs in hotspots %}
+                hotspot = new ymaps.GeoObject(
+                {geometry: {type: "Point", coordinates: ["{{ hs.lat }}", "{{ hs.lon }}"]},
+                properties:
+                    {
+                        iconContent: "{{ hs.essid }}",
+                        hintContent: "{{ hs.bssid }}"
+                    }
+                },
+                {preset: 'islands#blackStretchyIcon'})
+                myMap.geoObjects.add(hotspot)
+            {% endfor %}
+        {% endif %}
+    }
+</script>
+<div id="map"></div>

@@ -3,6 +3,7 @@ import os
 import pymysql
 from adminka.source_code.constants import *
 from adminka.source_code.logging import Logging
+from pymysql import Error
 
 
 class MySqlWorker:
@@ -18,6 +19,7 @@ class MySqlWorker:
                                     'файл: {}'.format(file_name))
         self._file_cfg = file_name
         self._settings = dict()
+        self._con = None
         if not self.read_config():
             raise ValueError('Некорректное содержимое конфигурационного файла.')
         self.test_connection()
@@ -69,72 +71,73 @@ class MySqlWorker:
             self.log.write_log("MYSQL_ER", ex)
             return False
 
+    def open_connection(self):
+        try:
+            if self._con is None:
+                self._con = pymysql.connect(host=self._settings['db_host'],
+                                            user=self._settings['db_user'],
+                                            passwd=self._settings['db_password'],
+                                            use_unicode=True, charset="utf8")
+            else:
+                self._con.ping()
+            return 1
+        except Error as e:
+            self.log.write_log("MYSQL_ER", str(e))
+            return None
+
+    def close_connection(self):
+        try:
+            if self._con is not None:
+                self._con.close()
+            return 1
+        except Error as e:
+            self.log.write_log("MYSQL_ER", str(e))
+            return None
+
     # метод выполняет запрос, результат которого - скаляр
     def execute_scalar(self, query):
+        self.open_connection()
         try:
-            con = pymysql.connect(host=self._settings['db_host'],
-                                  user=self._settings['db_user'],
-                                  passwd=self._settings['db_password'],
-                                  use_unicode=True, charset="utf8")
-            self.log.write_log("MYSQL", "CON_SUCCESSFUL")
-        except Exception as ex:
-            self.log.write_log("MYSQL_ER", ex)
-            return None
-        try:
-            cur = con.cursor()
+            cur = self._con.cursor()
             cur.execute(query)
             res = cur.fetchone()
-            con.close()
             self.log.write_log("MYSQL", "EXECUTE_OK")
             return res
         except Exception as ex:
             self.log.write_log("MYSQL_ER", ex)
             return None
+        finally:
+            self.close_connection()
 
     # метод выполняет запрос, результат которого - множество
     def execute(self, query):
+        self.open_connection()
         try:
-            con = pymysql.connect(host=self._settings['db_host'],
-                                  user=self._settings['db_user'],
-                                  passwd=self._settings['db_password'],
-                                  use_unicode=True, charset="utf8")
-            self.log.write_log("MYSQL", "CONN_SUCCESSFUL")
-        except Exception as ex:
-            self.log.write_log("MYSQL_ER", ex)
-            return None
-        try:
-            cur = con.cursor()
+            cur = self._con.cursor()
             cur.execute(query)
             res = cur.fetchall()
-            con.close()
             self.log.write_log("MYSQL", "EXECUTE_OK")
             return res
         except Exception as ex:
             self.log.write_log("MYSQL_ER", ex)
             return None
+        finally:
+            self.close_connection()
 
     # метод выполняет запрос без результата (insert, update)
     def execute_none(self, query):
+        self.open_connection()
         try:
-            con = pymysql.connect(host=self._settings['db_host'],
-                                  user=self._settings['db_user'],
-                                  passwd=self._settings['db_password'],
-                                  use_unicode=True, charset="utf8")
-            self.log.write_log("MYSQL", "CON_SUCCESSFUL")
-        except Exception as ex:
-            self.log.write_log("MYSQL_ER", ex)
-            return None
-        try:
-            cur = con.cursor()
+            cur = self._con.cursor()
             cur.execute(query)
-            con.commit()
-            con.close()
-            self.log.write_log("MYSQL", "EXECUTE_OK")
+            self._con.commit()
+            self.log.write_log("MYSQL", "INSERT(UPDATE)_OK")
             return True
         except Exception as ex:
             self.log.write_log("MYSQL_ER", ex)
             return None
+        finally:
+            self.close_connection()
 
 # mysql = MySqlWorker()
 # print(mysql.get_settings())
-

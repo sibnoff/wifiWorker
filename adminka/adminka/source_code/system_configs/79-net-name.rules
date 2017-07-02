@@ -2,3 +2,6 @@ SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:c0:ca:72:60:ea", NAME="wlan3
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:c0:ca:58:7e:69", NAME="wlan1"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:c0:ca:58:7e:71", NAME="wlan2"
 SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="94:de:80:2c:9c:39", NAME="eth0"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="70:4d:7b:65:76:bd", NAME="eth1"
+
+#кладем в /etc/udev/rules.d/

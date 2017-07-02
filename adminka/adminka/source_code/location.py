@@ -1,10 +1,11 @@
 import json
-from Logging import Logging
+from adminka.source_code.constants import *
+from adminka.source_code.logging import Logging
 
 
 class Location:
     def __init__(self):
-        self._log = Logging('logs/main.log')
+        self._log = Logging(LOGS_DIR_NAME + 'main.log')
 
     def get_current_loc(self, timeout):
         data = {"lat": "55.7558", "lon": "37.6176"}

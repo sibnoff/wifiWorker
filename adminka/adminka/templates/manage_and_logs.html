@@ -3,11 +3,13 @@
             <aside>
                 {% block logs %}
                 <div id="heading_2">Логи</div>
-                <output id="logs">
-                    {% for row in log_rows %}
-                        {{ row }}<br>
-                    {% endfor %}
-                </output>
+                <form id="query">
+                    <output id="logs">
+                        {% for row in log_rows %}
+                        <p>{{ row }}</p>
+                        {% endfor %}
+                    </output>
+                </form>
                 {% endblock %}
             </aside>
             <section class="content">
