@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6830ac21-2cf5-4b16-a4f6-46f4852e43d0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/hotspot_views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/logs/dnsmasq.output" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/logs/hostapd.output" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/map_views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/settings_views.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/states/hotspot.state" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/static/js/hostapd_get_logs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/templates/ap_mode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/templates/hostapd_logs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/adminka/adminka/templates/hotspot.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/adminka/adminka/resources/logo.jpg" afterPath="$PROJECT_DIR$/adminka/adminka/static/images/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/logs/log_error.txt" afterPath="$PROJECT_DIR$/adminka/adminka/logs/log_error.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/logs/main.log" afterPath="$PROJECT_DIR$/adminka/adminka/logs/main.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/source_code/accessPoint.py" afterPath="$PROJECT_DIR$/adminka/adminka/source_code/accessPoint.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/source_code/clientAndHotspot.py" afterPath="$PROJECT_DIR$/adminka/adminka/source_code/clientAndHotspot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/source_code/constants.py" afterPath="$PROJECT_DIR$/adminka/adminka/source_code/constants.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/source_code/firewall.py" afterPath="$PROJECT_DIR$/adminka/adminka/source_code/firewall.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/source_code/mySqlWorker.py" afterPath="$PROJECT_DIR$/adminka/adminka/source_code/mySqlWorker.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/source_code/system_configs/requriments.txt" afterPath="$PROJECT_DIR$/adminka/adminka/source_code/system_configs/requriments.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/static/js/get_log.js" afterPath="$PROJECT_DIR$/adminka/adminka/static/js/get_log.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/static/styles.css" afterPath="$PROJECT_DIR$/adminka/adminka/static/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/base.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/manage_and_logs.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/manage_and_logs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/settings.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/settings.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/templates/start_map.html" afterPath="$PROJECT_DIR$/adminka/adminka/templates/start_map.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/urls.py" afterPath="$PROJECT_DIR$/adminka/adminka/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adminka/adminka/views.py" afterPath="$PROJECT_DIR$/adminka/adminka/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -634,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498955813782</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="20170703_работает модуль hotspot">
+      <created>1499100919061</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1499100919061</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -689,7 +669,8 @@
     <MESSAGE value="20170627_логи выводятся раз в секунду + выставил минимальные размеры блоков разметки" />
     <MESSAGE value="20170701" />
     <MESSAGE value="20170701_отображает ТД на карте" />
-    <option name="LAST_COMMIT_MESSAGE" value="20170701_отображает ТД на карте" />
+    <MESSAGE value="20170703_работает модуль hotspot" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170703_работает модуль hotspot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
