@@ -1,4 +1,0 @@
-lo        no wireless extensions.
-
-enp5s0    no wireless extensions.
-

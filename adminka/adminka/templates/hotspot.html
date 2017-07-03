@@ -1,0 +1,52 @@
+{% extends "manage_and_logs.html" %}
+		{% block managment %}
+        <aside id="hs_clients">
+            <div id="heading_2">Информация о подключенных клиентах ТД</div>
+            <div id="table_clients">
+            </div>
+        </aside>
+        <section id="hs_settings">
+            <div id="heading_2">Настройки ТД</div>
+             <p><b>Выбор беспроводного интерфейса для ТД:</b><Br>
+                {% for iface in air_iface_list %}
+                    <input type="radio" name="host_iface" value="{{ iface }}">{{ iface }}<BR>
+                {% empty %}
+                    <p>Нет доступных беспроводных интерфейсов.</p>
+                {% endfor %}
+             </p>
+            <p><b>Выбор шлюзового интерфейса:</b><Br>
+                {% for iface in iface_list %}
+                    <input type="radio" name="gate_iface" value="{{ iface }}">{{ iface }}<BR>
+                {% endfor %}
+                </p>
+            </p>
+            <form id="hs_params">
+                <p><b>ESSID точки доступа:</b><br>
+                    <input type="text" size="25" id="hs_essid">
+                </p>
+                <p><b>Безопасность:</b><Br>
+                    <input type="radio" name="hs_security" value="wep">WEP<BR>
+                    <input type="radio" name="hs_security" value="wpa">WPA<BR>
+                    <input type="radio" name="hs_security" value="wpa2">WPA2<BR>
+                    PSK ключ:<br>
+                    <input type="text" size="25" id="hs_psk"><br><br>
+                    <input type="radio" name="hs_security" value="open">Открытая ТД<BR>
+                </p>
+                <p><br><br>
+                    <input type="button" class="btn_start" value="Старт" id="hs_start">
+                    <input type="button" class="btn_stop"   value="Стоп" id="hs_stop">
+                </p>
+                <output id="ap_status">
+                    {% if ap_status %}
+                        <b><span style="color: green;">ТД ЗАПУЩЕНА</span></b>
+                    {% else %}
+                        <b><span style="color: red;">ТД ОСТАНОВЛЕНА</span></b>
+                    {% endif %}
+                </output>
+            </form>
+        </section>
+        {% endblock %}
+        {% block scripts %}
+                <script type="text/javascript" src="/static/js/get_log.js"></script>
+                <script type="text/javascript" src="/static/js/hostapd_get_logs.js"></script>
+        {% endblock %}

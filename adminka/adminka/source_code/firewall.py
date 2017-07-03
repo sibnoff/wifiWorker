@@ -1,5 +1,6 @@
 import subprocess
-from constants import *
+from adminka.source_code.constants import *
+# from constants import *
 
 
 class Chains:
@@ -103,16 +104,17 @@ class Firewall:
         out, err = p.communicate()
         return out.decode(encoding='utf-8')
 
-    def on_exit(self):
-        self.clear_rules()
+    @staticmethod
+    def on_exit():
+        Firewall.clear_rules()
 
-        # добавляем последовательно 3 правила и удаляем их по
-        # индексам, но обязательно в той же последовательности
-        # one = Firewall.redirect_port_to_port(666, 777)
-        # two = Firewall.redirect_port_to_port(665, 776)
-        # three = Firewall.redirect_port_to_port(664, 775)
-        # print(Firewall.show_nat_rules('PREROUTING'))
-        # Firewall.del_rule_prerouting(three)
-        # Firewall.del_rule_prerouting(two)
-        # Firewall.del_rule_prerouting(one)
-        # print(Firewall.show_nat_rules('PREROUTING'))
+# добавляем последовательно 3 правила и удаляем их по
+# индексам, но обязательно в той же последовательности
+# one = Firewall.redirect_port_to_port(666, 777)
+# two = Firewall.redirect_port_to_port(665, 776)
+# three = Firewall.redirect_port_to_port(664, 775)
+# print(Firewall.show_nat_rules('PREROUTING'))
+# Firewall.del_rule_prerouting(three)
+# Firewall.del_rule_prerouting(two)
+# Firewall.del_rule_prerouting(one)
+# print(Firewall.show_nat_rules('PREROUTING'))

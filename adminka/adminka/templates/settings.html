@@ -52,9 +52,9 @@
                     <p><input type="button" value="Загрузить текущие настройки" id="load_set">
                         <p><input type="button" value="Проверить соединение" id="test_con">
                             {% if connection_status %}
-                                <output id="result_test_1"><b><font color="green">БД ДОСТУПНА</font></b></output>
+                                <output id="result_test_1"><b><span style="color: green; ">БД ДОСТУПНА</span></b></output>
                             {% else %}
-                                <output id="result_test_0"><b><font color="red">БД НЕ ДОСТУПНА</font></b></output>
+                                <output id="result_test_0"><b><span style="color: red; ">БД НЕ ДОСТУПНА</span></b></output>
                             {% endif %}
                         </p>
                     </p>

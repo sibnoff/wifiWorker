@@ -1,0 +1,14 @@
+<table border="1">
+   <tr>
+    <th>MAC адрес</th>
+    <th>Текущий IP адрес</th>
+    <th>Ник</th>
+   </tr>
+    {% for client in clients %}
+        <tr>
+            <th>{{ client.mac }}</th>
+            <th>{{ client.cur_ip }}</th>
+            <th>{{ client.nick }}</th>
+        </tr>
+    {% endfor %}
+</table>

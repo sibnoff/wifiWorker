@@ -27,9 +27,8 @@ section {
 footer {
 	height: 10px;
 	color: #000000;
-	border: 2px solid black;
+	border: 1px solid black;
 	margin: 10px;
-
 	position: fixed; /* Фиксированное положение */
     left: 0; bottom: 0; /* Левый нижний угол */
     padding: 10px; /* Поля вокруг текста */
@@ -43,7 +42,7 @@ h1 {
 }
 #border{
 	color: #000000;
-	size: 4;
+	size: 4px;
 }
 header {
     text-align: center;
@@ -79,14 +78,6 @@ nav li {
     -webkit-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
     box-shadow: 0 3px 1px rgba(0, 0, 0, 0.2);
-}
-
-.top-menu li.active {
-	background: #333366;
-}
-
-.top-menu a.active {
-	background: #333366;
 }
 
 #heading {
@@ -145,4 +136,32 @@ nav li {
 }
 #query{
 	margin: 10px;
+}
+#hs_settings{
+    margin: 10px;
+    width: 25%;
+    height: 90%;
+    border: None;
+}
+#hs_clients{
+    background: #6b805e;
+    margin: 10px;
+    width: 70%;
+    height: 90%;
+    float: right;
+    border: None;
+}
+
+.btn_start{
+	color: black;
+    font-size: 12pt;
+	border-radius: 5px;
+	background: green;
+}
+
+.btn_stop{
+	color: black;
+    font-size: 12pt;
+	border-radius: 5px;
+	background: red;
 }

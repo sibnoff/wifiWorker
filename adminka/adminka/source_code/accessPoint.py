@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import json
+import os
 import subprocess
 import time
-from constants import *
-from firewall import Firewall
+from adminka.source_code.constants import *
+from adminka.source_code.firewall import Firewall
+from adminka.source_code.logging import Logging
+
+
+# from constants import *
+# from firewall import Firewall
+# from logging import Logging
 
 
 class ClientStation:
@@ -52,6 +60,8 @@ class AccessPoint:
         self.channel = None
         self.essid = None
         self.psk = None
+        self.log = Logging(LOGS_DIR_NAME + 'main.log')
+        self.fw = Firewall()
 
     def set_interface(self, interface):
         self.interface = interface
@@ -74,6 +84,7 @@ class AccessPoint:
             'no-resolv\n'
             'interface=%s\n'
             'dhcp-range=%s\n'
+            'log-queries\n'
         )
 
         with open('/tmp/dhcpd.conf', 'w') as dhcpconf:
@@ -84,32 +95,24 @@ class AccessPoint:
                 dhcpconf.write("server=%s" % (PUBLIC_DNS,))
             else:
                 dhcpconf.write("address=/#/%s\n" % (NETWORK_GW_IP,))
-
-        dhcp = subprocess.Popen(['dnsmasq', '-C', '/tmp/dhcpd.conf'], stdout=DN, stderr=ER)
+        output = open(LOGS_DIR_NAME + 'dnsmasq.output', 'w')
+        dhcp = subprocess.Popen(['dnsmasq', '-C', '/tmp/dhcpd.conf'], stdout=output, stderr=ER)
         time.sleep(1)
         try:
             if dhcp.poll() is None:
-                print('[' + R + '+' + W +
-                      '] Ошибка при запуске DHCP(DNS) сервера.\n' +
-                      '[' + R + '+' + W +
-                      '] Попробуйте перезапустить модуль.'
-                      )
+                self.log.write_log('DHCP_ER', 'Не удалось запустить DHCP/DNS сервер')
                 raise Exception
         except KeyboardInterrupt:
             raise Exception
         subprocess.Popen(['ifconfig', str(self.interface), 'mtu', '1400'], stdout=DN, stderr=ER)
         subprocess.Popen(
             ['ifconfig', str(self.interface), 'up', NETWORK_GW_IP,
-             'netmask', NETWORK_MASK
-             ],
-            stdout=DN,
-            stderr=ER
+             'netmask', NETWORK_MASK], stdout=DN, stderr=ER
         )
-        # Give it some time to avoid "SIOCADDRT: Network is unreachable"
         time.sleep(.5)
-        # Make sure that we have set the network properly.
         proc = str(subprocess.check_output(['ifconfig', str(self.interface)]))
         if proc.find(NETWORK_GW_IP) == -1:
+            self.log.write_log('DHCP_ER', 'Не удалось запустить DHCP/DNS сервер')
             return False
         subprocess.call(
             ('route add -net %s netmask %s gw %s' %
@@ -117,6 +120,7 @@ class AccessPoint:
             shell=True)
 
     def start(self):
+        self.log.write_log('AP', 'Начинаем запуск ТД')
         config = (
             'interface=%s\n'
             'driver=nl80211\n'
@@ -132,21 +136,48 @@ class AccessPoint:
 
         with open('/tmp/hostapd.conf', 'w') as conf:
             conf.write(config % (self.interface, self.essid, self.channel))
-
-        hostapd_proc = subprocess.Popen(['hostapd', '/tmp/hostapd.conf'],
-                                        stdout=DN, stderr=ER)
+        output = open(LOGS_DIR_NAME + 'hostapd.output', 'w')
+        hostapd_proc = subprocess.Popen(['hostapd', '/tmp/hostapd.conf'], stdout=output, stderr=ER)
         try:
             time.sleep(2)
             if hostapd_proc.poll() is not None:
-                # hostapd will exit on error
-                print('[' + R + '+' + W +
-                      '] Failed to start access point! (hostapd error)\n' +
-                      '[' + R + '+' + W +
-                      '] Try a different wireless interface using -aI option.'
-                      )
+                self.log.write_log('AP_ER', 'Не удалось запустить ТД')
                 raise Exception
         except KeyboardInterrupt:
             raise Exception
+        try:
+            self.log.write_log('AP', 'Сервис hostapd запущен')
+            self.start_dhcp_dns()
+            self.log.write_log('AP', 'DHCP/DNS сервер запущен')
+            self.fw.nat(self.interface, self.internet_interface)
+            self.set_ip_fwd()
+            self.set_route_localnet()
+            self.log.write_log('AP', 'Добавлены правила маршрутизации в iptables')
+            self.log.write_log('AP', 'ТД {} запущена на интерфейсе {}'.format(self.essid, self.interface))
+            self.write_state()
+        except Exception as ex:
+            AccessPoint.on_exit()
+            self.log.write_log('AP_ER', 'Не удалось запустить ТД')
+
+    def write_state(self):
+        f = open(STATES_DIR_NAME + 'hotspot.state', 'w')
+        params = dict()
+        params['state'] = 1
+        params['host_iface'] = self.interface
+        params['gate_iface'] = self.internet_interface
+        params['essid'] = self.essid
+        params['hs_security'] = 'wpa2'
+        params['psk'] = self.psk
+        params['channel'] = self.channel
+        f.writelines(json.dumps(params))
+        f.close()
+
+    @staticmethod
+    def read_state():
+        f = open(STATES_DIR_NAME + 'hotspot.state', 'r')
+        params = json.loads(f.readline())
+        f.close()
+        return params
 
     @staticmethod
     def set_ip_fwd():
@@ -159,7 +190,15 @@ class AccessPoint:
             ['sysctl', '-w', 'net.ipv4.conf.all.route_localnet=1'], stdout=DN, stderr=ER)
 
     @staticmethod
+    def write_params_state(params):
+        f = open(STATES_DIR_NAME + 'hotspot.state', 'w')
+        f.writelines(json.dumps(params))
+        f.close()
+
+    @staticmethod
     def on_exit():
+        lg = Logging(LOGS_DIR_NAME + 'main.log')
+        lg.write_log('AP', 'Начинаем остановку ТД')
         subprocess.call('pkill dnsmasq', shell=True)
         subprocess.call('pkill hostapd', shell=True)
 
@@ -169,32 +208,32 @@ class AccessPoint:
             os.remove('/var/lib/misc/dnsmasq.leases')
         if os.path.isfile('/tmp/dhcpd.conf'):
             os.remove('/tmp/dhcpd.conf')
+        Firewall.clear_rules()
+        params = AccessPoint.read_state()
+        params['state'] = 0
+        AccessPoint.write_params_state(params)
+        lg.write_log('AP', 'ТД остановлена')
 
-
-internal_interface = 'wlan2'
-external_interface = 'wlan0'
-essid = 'homeAP'
-psk = '123123123'
-
-ap = AccessPoint()
-ap.set_channel(CHANNEL)
-ap.set_essid(essid)
-ap.set_interface(internal_interface)
-ap.set_internet_interface(external_interface)
-ap.set_psk(psk)
-fw = Firewall()
-try:
-    ap.start()
-    print('[*] Точка доступа {} запущена.[*]'.format(essid))
-    ap.start_dhcp_dns()
-    print('[*] DHCP/DNS сервер запущен.[*]')
-    fw.nat(internal_interface, external_interface)
-    ap.set_ip_fwd()
-    ap.set_route_localnet()
-    print('[*] Параметры маршрутизации заданы.[*]')
-except Exception as ex:
-    print('[*] Не удалось запустить точку доступа.[*]')
-    print(ex)
-    ap.on_exit()
-    fw.on_exit()
-    exit(-5)
+# internal_interface = 'wlan1'
+# external_interface = 'eth1'
+# essid = 'testtesttestAP'
+# psk = '123123123'
+# channel = 9
+#
+# ap = AccessPoint()
+# ap.set_channel(channel)
+# ap.set_essid(essid)
+# ap.set_interface(internal_interface)
+# ap.set_internet_interface(external_interface)
+# ap.set_psk(psk)
+# try:
+#     ap.start()
+#     print('[*] Точка доступа {} запущена.[*]'.format(essid))
+#     a = input()
+# except Exception as ex:
+#     print('[*] Не удалось запустить точку доступа.[*]')
+#     print(ex)
+#     ap.on_exit()
+#     exit(-5)
+# ap.on_exit()
+# print('[*] Точка доступа {} остановлена.[*]'.format(essid))

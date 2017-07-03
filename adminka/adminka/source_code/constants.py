@@ -2,6 +2,8 @@ PROJECT_DIR = '/home/intercepter/PycharmProjects/wifiWorker/adminka/adminka/'
 
 CONFIGS_DIR_NAME = PROJECT_DIR + 'configs/'
 LOGS_DIR_NAME = PROJECT_DIR + 'logs/'
+STATES_DIR_NAME = PROJECT_DIR + 'states/'
+TEMP_DIR_NAME = PROJECT_DIR + 'tmp/'
 CHANNEL = 6
 PUBLIC_DNS = "8.8.8.8"
 NETWORK_IP = "192.168.74.0"

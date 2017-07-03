@@ -1,9 +1,9 @@
 import json
 import os
 import pymysql
+from pymysql import Error
 from adminka.source_code.constants import *
 from adminka.source_code.logging import Logging
-from pymysql import Error
 
 
 class MySqlWorker:

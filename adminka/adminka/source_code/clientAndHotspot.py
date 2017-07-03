@@ -13,22 +13,22 @@ class Client:
         - ESSID текущей ТД"""
 
     def __init__(self, mac, cur_ip, nick, essid):
-        self._mac = mac
-        self._cur_ip = cur_ip
+        self.mac = mac
+        self.cur_ip = cur_ip
         if nick is None:
-            self._nick = mac
+            self.nick = mac
         else:
-            self._nick = nick
+            self.nick = nick
         self._essid = essid
         self._log = Logging(LOGS_DIR_NAME + 'main.log')
 
     def __str__(self):
         """Возвращает строку: MAC:current_ip:nick"""
-        return 'mac:{}, ip:{}, nick:{}'.format(self._mac, self._cur_ip, self._nick)
+        return 'mac:{}, ip:{}, nick:{}'.format(self.mac, self.cur_ip, self.nick)
 
     # назначаем ник клиенту
     def set_nick(self, nick):
-        self._nick = nick
+        self.nick = nick
 
     # вставляем (обновляем) информацию о клиенте в БД
     def insert_info(self):
@@ -38,7 +38,7 @@ class Client:
                        "('{}', '{}', '{}', '{}', '{}')" \
                        "on duplicate key update lastEssid = '{}', " \
                        "dateUpdate = '{}'".format(DB_NAME, datetime.datetime.now(),
-                                                  self._mac, self._nick, self._essid,
+                                                  self.mac, self.nick, self._essid,
                                                   datetime.datetime.now(), self._essid,
                                                   datetime.datetime.now())
         if mw.execute_none(query_insert) is None:
@@ -99,8 +99,8 @@ class Client:
     def update_nick_in_db(self):
         mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
         query_update = "update {}.clients set nick = '{}' " \
-                       "where mac = '{}'".format(DB_NAME, self._nick,
-                                                 self._mac)
+                       "where mac = '{}'".format(DB_NAME, self.nick,
+                                                 self.mac)
         if mw.execute_none(query_update) is None:
             self._log.write_log("UPDATE_ERROR", "Не удалось выполнить обновление ника клиента.")
 
@@ -118,7 +118,7 @@ class Client:
     # получаем всю информацию о клиенте из таблицы clients
     def get_info(self):
         mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
-        query_info = 'select * from {}.clients where mac = {} limit 1'.format(DB_NAME, self._mac)
+        query_info = 'select * from {}.clients where mac = {} limit 1'.format(DB_NAME, self.mac)
         tmp = mw.execute_scalar(query_info)
         if tmp is None:
             self._log.write_log("SELECT_ERROR", "Не удалось выполнить запрос информации о клиенте.")

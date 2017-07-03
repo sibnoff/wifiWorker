@@ -1,8 +1,9 @@
 from django.conf.urls import url
-from adminka.views import settings, monitoring, hotspot, \
-    sniff, jammer, proxy_server, rainbow_tables, map_working, \
-    download, help_page, settings_save, settings_load, get_tail_log, \
-    show_all_hotspot, hotspot_show, client_show
+from adminka.views import monitoring, sniff, jammer, proxy_server, \
+    rainbow_tables, download, help_page, get_tail_log
+from adminka.settings_views import settings, settings_save, settings_load
+from adminka.hotspot_views import hotspot, hostapd_get_logs, start_hotspot, stop_hotspot
+from adminka.map_views import map_working, show_all_hotspot, hotspot_show, client_show
 
 urlpatterns = [
     url(r'^$', settings),
@@ -12,6 +13,9 @@ urlpatterns = [
     url(r'^get-logs/$', get_tail_log),
     url(r'^monitoring/$', monitoring),
     url(r'^hotspot/$', hotspot),
+    url(r'^hostapd-get-logs/$', hostapd_get_logs),
+    url(r'^stop-hotspot/$', stop_hotspot),
+    url(r'^start-hotspot/$', start_hotspot),
     url(r'^sniff/$', sniff),
     url(r'^jammer/$', jammer),
     url(r'^proxyserver/$', proxy_server),

@@ -1,3 +1,6 @@
-hostapd
-netifaces
-pymysql
+sudo apt-get install python3
+sudo apt-get install python3-pip
+sudo apt-get install hostapd
+sudo -H pip3 install pymysql
+sudo -H pip3 install django
+sudo -H pip3 install netifaces
