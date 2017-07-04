@@ -6,6 +6,7 @@ from adminka.source_code.logging import Logging
 from adminka.source_code.accessPoint import AccessPoint
 from adminka.source_code.clientAndHotspot import Client
 
+
 def hotspot(request):
     hs_settings = dict()
     hs_settings['page_name'] = 'Создание собственной точки доступа'
@@ -16,7 +17,7 @@ def hotspot(request):
     return render_to_response('hotspot.html', hs_settings)
 
 
-def hostapd_get_logs(request):
+def hotspot_get_logs(request):
     f = open(LOGS_DIR_NAME + 'hostapd.output', 'r')
     rows = f.readlines()
     f.close()
@@ -39,13 +40,22 @@ def hostapd_get_logs(request):
     output, stderrdata = p.communicate()
     output = output.decode('utf-8').split('\n')
     clients = []
+    f = open(TEMP_DIR_NAME + 'hotspot.tmp', 'r')
+    current_macs = f.readlines()
+    f.close()
     for line in output:
         for i in range(len(clients_connected)):
             if clients_connected[i] in line:
-                clients.append(Client(clients_connected[i], line.split()[0], '', AccessPoint.read_state()['essid']))
-                clients_connected[i] = '{} -> {}'.format(clients_connected[i], line.split()[0])
-
-    return render_to_response("hostapd_logs.html", {'clients': clients})
+                cl = Client(clients_connected[i], line.split()[0], '', AccessPoint.read_state()['essid'])
+                if cl.mac not in current_macs:
+                    cl.insert_info()
+                    f = open(TEMP_DIR_NAME + 'hotspot.tmp', 'a')
+                    f.writelines(cl.mac + '\n')
+                    f.close()
+                cl.get_my_nick()
+                clients.append(cl)
+    rows.reverse()
+    return render_to_response("hostapd_logs.html", {'clients': clients, 'hostapd_log_rows': rows})
 
 
 def start_hotspot(request):

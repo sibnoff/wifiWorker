@@ -83,6 +83,16 @@ class Client:
             return False
         return True
 
+    def get_my_nick(self):
+        mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
+        query_nick = "select nick from {}.clients where mac = '{}' limit 1".format(DB_NAME, self.mac)
+        tmp = mw.execute_scalar(query_nick)
+        if tmp is None:
+            lg = Logging(LOGS_DIR_NAME + 'main.log')
+            lg.write_log("SELECT_ERROR", "Не удалось выполнить запрос ника клиента.")
+            return None
+        self.nick = tmp[0]
+
     # получаем ник для mac адреса из БД
     @staticmethod
     def get_nick(mac):
@@ -95,14 +105,14 @@ class Client:
             return None
         return tmp[0]
 
-    # обновляем ник клиента в БД
-    def update_nick_in_db(self):
+    @staticmethod
+    def update_nick_in_db(nick, mac):
         mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
         query_update = "update {}.clients set nick = '{}' " \
-                       "where mac = '{}'".format(DB_NAME, self.nick,
-                                                 self.mac)
+                       "where mac = '{}'".format(DB_NAME, nick, mac)
         if mw.execute_none(query_update) is None:
-            self._log.write_log("UPDATE_ERROR", "Не удалось выполнить обновление ника клиента.")
+            lg = Logging(LOGS_DIR_NAME + 'main.log')
+            lg.write_log("UPDATE_ERROR", "Не удалось выполнить обновление ника клиента.")
 
     # обновляем юзерагента клиента по маку
     @staticmethod

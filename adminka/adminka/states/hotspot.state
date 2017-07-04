@@ -1,1 +1,1 @@
-{"hs_security": "wpa2", "psk": "123123123", "essid": "test", "channel": 9, "state": 0, "host_iface": "wlan1", "gate_iface": "eth1"}
+{"hs_security": "wpa2", "psk": "123123123", "host_iface": "wlan1", "essid": "test", "gate_iface": "eth1", "state": 0, "channel": 9}

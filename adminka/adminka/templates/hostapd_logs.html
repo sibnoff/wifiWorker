@@ -12,3 +12,9 @@
         </tr>
     {% endfor %}
 </table>
+<div id="heading_2">Логи сервиса hostapd</div>
+<section id="hostapd_raw_logs">
+    {% for row in hostapd_log_rows %}
+        <p>{{ row }}</p>
+    {% endfor %}
+</section>

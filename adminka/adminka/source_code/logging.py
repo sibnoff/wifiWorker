@@ -12,8 +12,8 @@ class Logging:
                 fwrite = open(self._log_file, 'a')
             else:
                 fwrite = open(self._log_file, 'w')
-            fwrite.writelines("{} | {} | {}\n".format(str(datetime.datetime.now()).split('.')[0],
-                                                      tag_msg, text_msg))
+            fwrite.writelines('%(date)s | %(tag)-12s | %(msg)s\n' % {"date": str(datetime.datetime.now()).split('.')[0],
+                                                                     "tag": tag_msg, "msg": text_msg})
             fwrite.close()
         except Exception as e:
             print(str(e))

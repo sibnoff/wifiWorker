@@ -1,0 +1,29 @@
+{% extends "manage_and_logs.html" %}
+    {% block managment %}
+        <section id="monitoring">
+             <b>Выбор интерфейса:</b>
+                {% for iface in air_iface_list %}
+                    <input type="radio" name="mon_iface" value="{{ iface }}">{{ iface }}
+                {% empty %}
+                    Нет доступных интерфейсов.
+                {% endfor %}
+                <input type="button" class="btn_start" value="Старт" id="mon_start">
+                <input type="button" class="btn_stop"   value="Стоп" id="mon_stop">
+                <output id="monitor_status">
+                    {% if mon_status %}
+                        <b><span style="color: green;">Мониторинг запущен</span></b>
+                    {% else %}
+                        <b><span style="color: red;">Мониторинг остановлен</span></b>
+                    {% endif %}
+                </output>
+            <div id="heading_2">Информация о клиентах и ТД поблизости</div>
+            <BR>
+            <BR>
+            <div id="monitor_tables">
+            </div>
+        </section>
+    {% endblock %}
+    {% block scripts %}
+        <script type="text/javascript" src="/static/js/get_log.js"></script>
+        <script type="text/javascript" src="/static/js/monitor_update.js"></script>
+    {% endblock %}

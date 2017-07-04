@@ -10,4 +10,4 @@ function getLogs()
     data: "count_rows=30" + "&file_name=main.log",
     success: onAjaxSuccess});
 }
-setInterval(getLogs, 1000);
+setInterval(getLogs, 2000);

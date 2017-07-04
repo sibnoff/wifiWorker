@@ -2,24 +2,18 @@ Configuration file: /tmp/hostapd.conf
 Using interface wlan1 with hwaddr 00:c0:ca:58:7e:69 and ssid "test"
 wlan1: interface state UNINITIALIZED->ENABLED
 wlan1: AP-ENABLED 
-wlan1: STA b4:3a:28:a0:8d:98 IEEE 802.11: authenticated
-wlan1: STA b4:3a:28:a0:8d:98 IEEE 802.11: associated (aid 1)
-wlan1: AP-STA-CONNECTED b4:3a:28:a0:8d:98
-wlan1: STA b4:3a:28:a0:8d:98 RADIUS: starting accounting session 595A7606-00000000
-wlan1: STA b4:3a:28:a0:8d:98 WPA: pairwise key handshake completed (RSN)
 wlan1: STA 38:94:96:b3:89:6d IEEE 802.11: authenticated
-wlan1: STA 38:94:96:b3:89:6d IEEE 802.11: associated (aid 2)
+wlan1: STA 38:94:96:b3:89:6d IEEE 802.11: associated (aid 1)
 wlan1: AP-STA-CONNECTED 38:94:96:b3:89:6d
-wlan1: STA 38:94:96:b3:89:6d RADIUS: starting accounting session 595A7606-00000001
+wlan1: STA 38:94:96:b3:89:6d RADIUS: starting accounting session 595BC30E-00000000
 wlan1: STA 38:94:96:b3:89:6d WPA: pairwise key handshake completed (RSN)
-wlan1: AP-STA-DISCONNECTED b4:3a:28:a0:8d:98
-wlan1: STA b4:3a:28:a0:8d:98 IEEE 802.11: disassociated
-wlan1: STA b4:3a:28:a0:8d:98 IEEE 802.11: deauthenticated due to inactivity (timer DEAUTH/REMOVE)
 wlan1: STA b4:3a:28:a0:8d:98 IEEE 802.11: authenticated
-wlan1: STA b4:3a:28:a0:8d:98 IEEE 802.11: associated (aid 1)
+wlan1: STA b4:3a:28:a0:8d:98 IEEE 802.11: associated (aid 2)
 wlan1: AP-STA-CONNECTED b4:3a:28:a0:8d:98
-wlan1: STA b4:3a:28:a0:8d:98 RADIUS: starting accounting session 595A7606-00000002
+wlan1: STA b4:3a:28:a0:8d:98 RADIUS: starting accounting session 595BC30E-00000001
 wlan1: STA b4:3a:28:a0:8d:98 WPA: pairwise key handshake completed (RSN)
+wlan1: STA b4:3a:28:a0:8d:98 WPA: group key handshake completed (RSN)
+wlan1: STA 38:94:96:b3:89:6d WPA: group key handshake completed (RSN)
 wlan1: interface state ENABLED->DISABLED
 wlan1: AP-STA-DISCONNECTED b4:3a:28:a0:8d:98
 wlan1: AP-STA-DISCONNECTED 38:94:96:b3:89:6d

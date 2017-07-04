@@ -1,0 +1,38 @@
+<div><b>ТОЧКИ ДОСТУПА</b></div>
+<table id="hotspots" border="1">
+    <tr>
+        <th>BSSID</th>
+        <th>ESSID</th>
+        <th>PWR</th>
+        <th>CHANNEL</th>
+        <th>TYPE</th>
+    </tr>
+    {% for hs in hotspots %}
+    <tr>
+        <th>{{ hotspots.bssid }}</th>
+        <th>{{ hotspots.essid }}</th>
+        <th>{{ hotspots.pwr }}</th>
+        <th>{{ hotspots.channel }}</th>
+        <th>{{ hotspots.type }}</th>
+    </tr>
+    {% endfor %}
+</table>
+<BR>
+<BR>
+<div><b>КЛИЕНТЫ</b></div>
+<table id="clients" border="1">
+    <tr>
+        <th>MAC адрес</th>
+        <th>Ник</th>
+        <th>PWR</th>
+        <th>BSSID(если подключен)</th>
+    </tr>
+    {% for client in clients %}
+    <tr>
+        <th>{{ client.mac }}</th>
+        <th>{{ client.nick }}</th>
+        <th>{{ client.pwr }}</th>
+        <th>{{ client.bssid }}</th>
+    </tr>
+    {% endfor %}
+</table>

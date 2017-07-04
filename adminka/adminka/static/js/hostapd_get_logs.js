@@ -30,6 +30,6 @@ function stopAP()
 }
 
 
-setInterval(hostapdGetLogs, 1000);
-$('#hs_start').on('click', startAP)
-$('#hs_stop').on('click', stopAP)
+setInterval(hostapdGetLogs, 3000);
+$('#hs_start').on('click', startAP);
+$('#hs_stop').on('click', stopAP);

@@ -35,16 +35,16 @@
                 <div id="heading_2">Настройки БД</div>
                 <form id="set_db">
                     <p><b>IP адрес сервера БД:</b><br>
-                        <input type="text" size="40" id="db_ip" value="{{ db_host }}">
+                        <input type="text" size="25" id="db_ip" value="{{ db_host }}">
                     </p>
                     <p><b>Имя БД:</b><br>
-                        <input type="text" size="40" id="db_name" value="{{ db_name }}">
+                        <input type="text" size="25" id="db_name" value="{{ db_name }}">
                     </p>
                     <p><b>Имя пользователя БД:</b><br>
-                        <input type="text" size="40" id="db_login" value="{{ db_user }}">
+                        <input type="text" size="25" id="db_login" value="{{ db_user }}">
                     </p>
                     <p><b>Пароль пользователя БД:</b><br>
-                        <input type="text" size="40" id="db_passwd" value="{{ db_password }}">
+                        <input type="text" size="25" id="db_passwd" value="{{ db_password }}">
                     </p>
                     <p><input type="button" value="Сохранить новые настройки" id="save_set"></p>
                 </form>
@@ -52,9 +52,9 @@
                     <p><input type="button" value="Загрузить текущие настройки" id="load_set">
                         <p><input type="button" value="Проверить соединение" id="test_con">
                             {% if connection_status %}
-                                <output id="result_test_1"><b><span style="color: green; ">БД ДОСТУПНА</span></b></output>
+                                <output id="result_test_1"><b><span style="color: green;">БД ДОСТУПНА</span></b></output>
                             {% else %}
-                                <output id="result_test_0"><b><span style="color: red; ">БД НЕ ДОСТУПНА</span></b></output>
+                                <output id="result_test_0"><b><span style="color: red;">БД НЕ ДОСТУПНА</span></b></output>
                             {% endif %}
                         </p>
                     </p>

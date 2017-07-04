@@ -67,11 +67,16 @@ nav li {
 	padding: 5px;
 }
 
+.top-menu{
+	margin-left: 15%; /* Отступ слева */
+	margin-right: 15%; /* Отступ справа */
+}
+
 .top-menu li {
 	background: #C0C0C0;
 	display: inline-block;
-	padding: 5px 15px;
-	margin: 10px;
+	padding: 5px 10px;
+	margin: 5px;
 	-webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 5px;
@@ -100,14 +105,14 @@ nav li {
 }
 #settings_bd{
     margin: 10px;
-    width: 43%;
+    width: 35%;
     height: 90%;
     border: None;
 }
 #settings_iface{
     background: #6b805e;
     margin: 10px;
-    width: 53%;
+    width: 60%;
     height: 90%;
     float: right;
     border: None;
@@ -127,7 +132,6 @@ nav li {
     height: 90%;
 }
 #logs{
-	margin: 15px;
     font: 9px 'Oswald', sans-serif;
 }
 
@@ -164,4 +168,15 @@ nav li {
     font-size: 12pt;
 	border-radius: 5px;
 	background: red;
+}
+#hostapd_raw_logs
+{
+	height: 40vh;
+	margin: 0;
+	width: 95%;
+}
+#monitoring{
+	width: 99%;
+	height: 97%;
+	border: None;
 }

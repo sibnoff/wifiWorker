@@ -25,10 +25,6 @@ def get_tail_log(request):
         return render_to_response("get_logs.html", {'log_rows': sorted(rows[len(rows) - count:], reverse=True)})
 
 
-def monitoring(request):
-    return render_to_response('manage_and_logs.html', {'page_name': 'Мониторинг эфира'})
-
-
 def sniff(request):
     return render_to_response('manage_and_logs.html', {'page_name': 'Захват пакетов'})
 

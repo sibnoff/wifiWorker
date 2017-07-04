@@ -15,12 +15,14 @@ class MySqlWorker:
             return
         self.log = Logging(LOGS_DIR_NAME + 'main.log')
         if not os.path.isfile(file_name):
+            self.log.write_log("MYSQL_CONFIG", "FILE_NOT_FOUND")
             raise FileNotFoundError('Не найден конфигурационный '
                                     'файл: {}'.format(file_name))
         self._file_cfg = file_name
         self._settings = dict()
         self._con = None
         if not self.read_config():
+            self.log.write_log("MYSQL_CONFIG", "READ_ERROR")
             raise ValueError('Некорректное содержимое конфигурационного файла.')
         self.test_connection()
 
@@ -48,7 +50,7 @@ class MySqlWorker:
         try:
             f.writelines(json.dumps(self._settings))
         except Exception as ex:
-            self.log.write_log("JSON", ex)
+            self.log.write_log("MYSQL_JSON", ex)
             return False
         f.close()
         self.log.write_log("MYSQL", "SAVE_SETTINGS")
@@ -65,7 +67,6 @@ class MySqlWorker:
                                   user=self._settings['db_user'],
                                   passwd=self._settings['db_password'])
             con.close()
-            self.log.write_log("MYSQL", "CON_SUCCESSFUL")
             return True
         except Exception as ex:
             self.log.write_log("MYSQL_ER", ex)
@@ -101,7 +102,6 @@ class MySqlWorker:
             cur = self._con.cursor()
             cur.execute(query)
             res = cur.fetchone()
-            self.log.write_log("MYSQL", "EXECUTE_OK")
             return res
         except Exception as ex:
             self.log.write_log("MYSQL_ER", ex)
@@ -131,7 +131,6 @@ class MySqlWorker:
             cur = self._con.cursor()
             cur.execute(query)
             self._con.commit()
-            self.log.write_log("MYSQL", "INSERT(UPDATE)_OK")
             return True
         except Exception as ex:
             self.log.write_log("MYSQL_ER", ex)

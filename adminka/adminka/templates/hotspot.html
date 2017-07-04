@@ -1,5 +1,5 @@
 {% extends "manage_and_logs.html" %}
-		{% block managment %}
+    {% block managment %}
         <aside id="hs_clients">
             <div id="heading_2">Информация о подключенных клиентах ТД</div>
             <div id="table_clients">
@@ -45,8 +45,8 @@
                 </output>
             </form>
         </section>
-        {% endblock %}
-        {% block scripts %}
-                <script type="text/javascript" src="/static/js/get_log.js"></script>
-                <script type="text/javascript" src="/static/js/hostapd_get_logs.js"></script>
-        {% endblock %}
+    {% endblock %}
+    {% block scripts %}
+        <script type="text/javascript" src="/static/js/get_log.js"></script>
+        <script type="text/javascript" src="/static/js/hostapd_get_logs.js"></script>
+    {% endblock %}
