@@ -9,14 +9,14 @@
             <div id="heading_2">Настройки ТД</div>
              <p><b>Выбор беспроводного интерфейса для ТД:</b><Br>
                 {% for iface in air_iface_list %}
-                    <input type="radio" name="host_iface" value="{{ iface }}">{{ iface }}<BR>
+                    <input type="radio" name="host_iface" value="{{ iface }}">{{ iface }}
                 {% empty %}
                     <p>Нет доступных беспроводных интерфейсов.</p>
                 {% endfor %}
              </p>
             <p><b>Выбор шлюзового интерфейса:</b><Br>
                 {% for iface in iface_list %}
-                    <input type="radio" name="gate_iface" value="{{ iface }}">{{ iface }}<BR>
+                    <input type="radio" name="gate_iface" value="{{ iface }}">{{ iface }}
                 {% endfor %}
                 </p>
             </p>
@@ -25,14 +25,14 @@
                     <input type="text" size="25" id="hs_essid">
                 </p>
                 <p><b>Безопасность:</b><Br>
-                    <input type="radio" name="hs_security" value="wep">WEP<BR>
-                    <input type="radio" name="hs_security" value="wpa">WPA<BR>
+                    <input type="radio" name="hs_security" value="wep">WEP
+                    <input type="radio" name="hs_security" value="wpa">WPA
                     <input type="radio" name="hs_security" value="wpa2">WPA2<BR>
                     PSK ключ:<br>
                     <input type="text" size="25" id="hs_psk"><br><br>
                     <input type="radio" name="hs_security" value="open">Открытая ТД<BR>
                 </p>
-                <p><br><br>
+                <p><br>
                     <input type="button" class="btn_start" value="Старт" id="hs_start">
                     <input type="button" class="btn_stop"   value="Стоп" id="hs_stop">
                 </p>

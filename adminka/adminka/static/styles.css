@@ -6,7 +6,7 @@ body {
 }
 aside {
 	width: 25%;
-	height: 79vh;
+	height: 77vh;
 	background: #C0C0C0;
 	color: #000000;
 	float: right;
@@ -16,7 +16,7 @@ aside {
 }
 section {
 	width: 73%;
-	height: 79vh;
+	height: 77vh;
     color: #000000;
     background: #6b805e;
 	border: 1px solid black;
@@ -35,10 +35,12 @@ footer {
     background: #C0C0C0; /* Цвет фона */
     width: 97%; /* Ширина слоя */
 }
+
 h1 {
 	display: inline-block;
 	color: #000000;
 	font: 15px 'Oswald', sans-serif;
+	margin: 1px;
 }
 #border{
 	color: #000000;
@@ -68,8 +70,8 @@ nav li {
 }
 
 .top-menu{
-	margin-left: 15%; /* Отступ слева */
-	margin-right: 15%; /* Отступ справа */
+	margin-left: 1%; /* Отступ слева */
+	margin-right: 1%; /* Отступ справа */
 }
 
 .top-menu li {
@@ -86,7 +88,6 @@ nav li {
 }
 
 #heading {
-	margin: 5px;
 	text-align: center;
 	color: #000000;
 	font: 15px 'Oswald', sans-serif;
@@ -126,7 +127,7 @@ nav li {
 
 #air_iface{
     margin: 10px;
-    width: 55%;
+    width: 50%;
     background: #6b805e;
     border: None;
     height: 90%;

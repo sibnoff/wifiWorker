@@ -4,6 +4,10 @@ from adminka.source_code.constants import *
 from adminka.source_code.logging import Logging
 from adminka.source_code.mySqlWorker import MySqlWorker
 
+# from constants import *
+# from logging import Logging
+# from mySqlWorker import MySqlWorker
+
 
 class Client:
     """Клиент точки доступа. Атрибуты:
