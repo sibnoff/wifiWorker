@@ -4,6 +4,7 @@ from adminka.source_code.constants import *
 from adminka.source_code.logging import Logging
 from adminka.source_code.mySqlWorker import MySqlWorker
 
+
 # from constants import *
 # from logging import Logging
 # from mySqlWorker import MySqlWorker
@@ -16,9 +17,10 @@ class Client:
         - nick
         - ESSID текущей ТД"""
 
-    def __init__(self, mac, cur_ip, nick, essid):
+    def __init__(self, mac, pwr, cur_ip, nick, essid):
         self.mac = mac
         self.cur_ip = cur_ip
+        self.pwr = pwr
         if nick is None:
             self.nick = mac
         else:
@@ -50,11 +52,11 @@ class Client:
 
     # вставляем информацию о местоположении клиента
     @staticmethod
-    def insert_geolocation(mac, location):
+    def insert_geolocation(mac, power, location):
         mw = MySqlWorker(CONFIGS_DIR_NAME + 'mySqlConfig.cfg')
-        query_insert = "insert into {}.geolocations (dateInsert, clients_mac, location) values " \
-                       "('{}', '{}', '{}');".format(DB_NAME, datetime.datetime.now(),
-                                                    mac, location)
+        query_insert = "insert into {}.geolocations (dateInsert, clients_mac, power, location) values " \
+                       "('{}', '{}', '{}', '{}');".format(DB_NAME, datetime.datetime.now(),
+                                                          mac, power, location)
         if mw.execute_none(query_insert) is None:
             lg = Logging(LOGS_DIR_NAME + 'main.log')
             lg.write_log("INSERT_ERROR", "Не удалось выполнить вставку местоположения.")
@@ -141,9 +143,10 @@ class Client:
 
 
 class Hotspot:
-    def __init__(self, bssid, essid, latitude, longitude):
+    def __init__(self, bssid, essid, pwr, latitude, longitude):
         self.bssid = bssid
         self.essid = essid
+        self.pwr = pwr
         self.lat = latitude
         self.lon = longitude
         self._log = Logging(LOGS_DIR_NAME + 'main.log')
@@ -170,20 +173,20 @@ class Hotspot:
             self._log.write_log('SELECT_ERROR', 'Не удалось поискать информацию о ТД.')
             return
         if int(tmp[0]) != 0:
-            query_update = "update {}.hotspots set " \
+            query_update = "update {}.hotspots set power = '{}', " \
                            "location = '{}', dateUpdate = " \
-                           "'{}'".format(DB_NAME, self.loc_to_json(),
+                           "'{}'".format(DB_NAME, self.pwr, self.loc_to_json(),
                                          datetime.datetime.now())
             if mw.execute_none(query_update) is None:
                 self._log.write_log("UPDATE_ERROR", "Не удалось выполнить "
                                                     "обновление информации о ТД.")
             return
-        query_insert = "insert into {}.hotspots (dateInsert, essid, " \
+        query_insert = "insert into {}.hotspots (dateInsert, essid, power, " \
                        "bssid, location, dateUpdate) values ('{}', '{}', " \
-                       "'{}', '{}', '{}')".format(DB_NAME, datetime.datetime.now(),
-                                                  self.essid, self.bssid,
-                                                  Hotspot.loc_to_json(self.lat, self.lon),
-                                                  datetime.datetime.now())
+                       "'{}', '{}', '{}', '{}')".format(DB_NAME, datetime.datetime.now(),
+                                                        self.essid, self.pwr, self.bssid,
+                                                        Hotspot.loc_to_json(self.lat, self.lon),
+                                                        datetime.datetime.now())
         if mw.execute_none(query_insert) is None:
             self._log.write_log("INSERT_ERROR", "Не удалось выполнить вставку ТД.")
 
